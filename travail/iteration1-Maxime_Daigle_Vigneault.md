@@ -10,4 +10,6 @@ Issue: Prototype Page index (#6) <br>
 https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/6 <br>
 Travail: 1 heure <br>
 <br>
-Total : 6 heures
+Cours : 6 heures<br>
+Autres : 2 heures<br>
+Total : 14 heures
