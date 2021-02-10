@@ -12,3 +12,4 @@ Travail:
 ### https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/11
 Travail:
  
+Total d'heures : ~ 10 heures
