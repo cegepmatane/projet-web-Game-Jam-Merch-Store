@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+    div div{
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .tete , .content{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .tete *{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 6em;
+        background-size: 200px 200px;
+    }
+
+    .content div{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 5%;
+        background-color: lightgray;
+    }
+
+    .content div *{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .content img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+</head>
+<body>
+
+<div class="tete">
+    <div style="background-image: url('./img/item2.png');"></div>
+    <div style="background-image: url('./img/item3.png');"></div>
+</div>
+<hr>
+<div class="content">
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+    <div><img src='./img/item1.png'><span>5.00$</span></div>
+</div>
+
+</body>
+</html>
