@@ -10,7 +10,7 @@ $item = array(
     "description" => "La meilleure chemise pour aller fracasser des monarques !",
     "taille" => "l",
     "prix" => 35,
-    "image" => "../../../img/chemise.png",
+    "image" => "../public/img/item2.png",
     "id_collection" => 1
 );
 
