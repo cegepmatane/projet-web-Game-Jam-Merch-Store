@@ -5,8 +5,12 @@ include "include/configuration.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
 
-$listeItem = PromotemyjamDAO::listerItems();
+//Récupération des collections
+$listeCollections = PromotemyjamDAO::listerCollections();
 
+//Recuperation des items
+//TODO Faire la liste selon la collection
+$listeItem = PromotemyjamDAO::listerItems();
 ?>
 
 <!DOCTYPE html>
@@ -19,55 +23,39 @@ $listeItem = PromotemyjamDAO::listerItems();
 </head>
 
 <body>
+    <?php
+    foreach($listeCollections as $collection)
+    {
+    ?>
+
     <section class="section">
         <a href="index.php">Retour</a>
 
-        <h1 class="titre">Paf Le Roi</h1>
+        <h1 class="titre"><?php echo $collection["nom"]; ?></h1>
         <div class="contain">
         
         <?php
-            foreach($listeItem as $item)
+        foreach($listeItem as $item)
+        {
+            //$item = get_object_vars($item);
+            if($item["id_collection"] == $collection["id"])
             {
-                //$item = get_object_vars($item);
-                if($item["id_collection"] == 2)
-                {
         ?>
-                    <div class="itemListe">
-                        <a href="item.php?id=<?php echo $item["id"]; ?>"><img src="img/test.png" alt="Item"></a>
-                        <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
-                    </div>
+                <div class="itemListe">
+                    <a href="item.php?id=<?php echo $item["id"]; ?>"><img src="img/test.png" alt="Item"></a>
+                    <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
+                </div>
         <?php
-                }
             }
+        }
         ?>
 
         </div>  
     </section>
 
-    <br>
-
-    <section class="section">
-        <h1 class="titre">Kanu</h1>
-        <div class="contain">
-
-        <?php
-            foreach($listeItem as $item)
-            {
-                //$item = get_object_vars($item);
-                if($item["id_collection"] == 1)
-                {
-        ?>
-                    <div class="itemListe">
-                        <a href="item.php"><img src="img/test.png" alt="Item"></a>
-                        <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
-                    </div>
-        <?php
-                }
-            }
-        ?>
-
-        </div>
-    </section>
+    <?php
+    }
+    ?>
 
 <?php
     require_once CHEMIN_INCLUDE."pied-page.php";
