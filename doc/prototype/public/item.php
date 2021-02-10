@@ -1,7 +1,12 @@
 <?php
+    include CHEMIN_INCLUDE."configuration.php";
 
+    require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
+    require_once CHEMIN_INCLUDE."entete.php";
 
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
+    $item = PromotemyjamDAO::lireItem($id);
 ?>
 
 <!DOCTYPE html>
@@ -19,15 +24,15 @@
 
         <div class="item">
             <img src="img/test.png" alt="Item">
-            <h2 class="itemTitre" style="text-align: center;">Nom item</h2>
+            <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
         </div>
 
         <div class="descriptionItem">
 
-            <h1>Page item prototype</h1>
-            <p>Tasse collectore au signe de ce celebre jeu </br> Revivez vos moment favoris</p>
+            <h1><?= $item["nom"]; ?></h1>
+            <p><?= $item["description"]; ?></p>
 
-            <p>prix et tout</p>
+            <p><?= $item["prix"]; ?></p>
         </div>
     </section>
 
