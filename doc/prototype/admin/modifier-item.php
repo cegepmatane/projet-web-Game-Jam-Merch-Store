@@ -48,7 +48,7 @@ $tailles = array(
                     <!-- <label for="collection-item">Inclure dans quelle collection ?</label> -->
                     <input type="hidden" id="id-collection" name="id-collection" value="<?php echo $item['id_collection']; ?>">
                     
-                    <div id="item">
+                    <div id="bloc-item">
                         <div id="informations-item">
                             <label for="nom-item">Nom</label>
                             <input type="text" id="nom-item" name="nom-item" value="<?php  echo $item['nom']; ?>">

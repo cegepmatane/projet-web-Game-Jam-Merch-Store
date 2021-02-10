@@ -82,6 +82,11 @@ ul{
     margin: 5% 0;
 }
     
+a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 5px;
+}
 
 #action-formulaire{
     display: flex;
@@ -99,7 +104,7 @@ ul{
         border-radius: 5px;
     }
 
-#item{
+#bloc-item{
     display: flex;
     flex-direction: row;
 }
@@ -107,6 +112,30 @@ ul{
 .miniature{
     width: 300px;
     height: auto;
+}
+
+.item{
+    float: left;
+    width: 25%;
+}
+
+section{
+    margin-top: 20%;
+}
+
+.itemListe{
+    float: left;
+    display: inline;
+}
+
+.contain{
+    width: 75%;
+    height: 100%;
+    text-align: center;
+}
+
+.titre{
+    border:black solid 2px;
 }
 
 @media screen and (max-width: 1000px){

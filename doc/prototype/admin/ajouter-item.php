@@ -28,7 +28,7 @@
                     <!-- <label for="collection-item">Inclure dans quelle collection ?</label> -->
                     <input type="hidden" id="id-collection" name="id-collection" value="<?php ?>">
                     
-                    <div id="item">
+                    <div id="bloc-item">
                         <div id="informations-item">
                             <label for="nom-item">Nom</label>
                             <input type="text" id="nom-item" name="nom-item">
