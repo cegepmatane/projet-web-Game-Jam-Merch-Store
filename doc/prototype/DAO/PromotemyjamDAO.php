@@ -30,11 +30,20 @@ class PromotemyjamDAO{
 
         $requete = BaseDeDonnee::getConnexion()->prepare($MESSAGE_SQL_LISTE_ITEM);
         $requete->execute();
-        $listeSerie = $requete->fetchAll();
-        return $listeSerie;
+        $listeItem = $requete->fetchAll();
+        return $listeItem;
     }
 
-    public static function ajotuerItem($item)
+    public static function listerCollection(){
+        $MESSAGE_SQL_LISTE_COLLECTION = "SELECT * FROM collection";
+
+        $requete = BaseDeDonnee::getConnexion()->prepare($MESSAGE_SQL_LISTE_COLLECTION);
+        $requete->execute();
+        $listeCollection = $requete->fetchAll();
+        return $listeCollection;
+    }
+
+    public static function ajouterItem($item)
     {
         $REQUETE_AJOUTER_ITEM = "INSERT INTO `item`(`nom`, `type`, `description`, `prix`, `id_collection`) ". 
                             "VALUES(".
@@ -58,7 +67,6 @@ class PromotemyjamDAO{
 
         return $reussitAjout;
     }
-
 
     public static function modifierItem($item)
     {
