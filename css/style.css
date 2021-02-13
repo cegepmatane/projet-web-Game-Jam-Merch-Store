@@ -81,6 +81,12 @@ label{
 ul{
     margin: 5% 0;
 }
+    
+a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 5px;
+}
 
 #action-formulaire{
     display: flex;
@@ -128,44 +134,78 @@ section{
     text-align: center;
 }
 
+    div div{
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .tete , .content{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .tete *{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 6em;
+        background-size: 200px 200px;
+    }
+
+    .content div{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 5%;
+        background-color: lightgray;
+    }
+
+    .content div *{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .content img{
+        width: 100px;
+        height: 100px;
+    }
+.panadmin{
+	border: black solid 2px;
+}
+
+
+        .leftBar{
+            float: left;
+            margin: 0 20px 0 20px;
+        }
+
+        .leftBar img {
+            float: none;
+            display: block;
+            height: 223px;
+            width: 321px;
+            
+        }
+
+        .missionBox{
+            margin-top: 12em;
+            position: relative;
+            border: solid 3px black;
+            border-radius: 15%;
+            width: 22em;
+            height: 13em;
+        }
+
+        .missionBox p {
+            margin: 20px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
 .titre{
     border:black solid 2px;
-}
-
-div div{
-    display: inline-block;
-    margin: 20px;
-}
-
-.tete , .content{
-    width: fit-content;
-    margin: 0 auto;
-}
-
-.tete *{
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 6em;
-    background-size: 200px 200px;
-}
-
-.content div{
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    border-radius: 5%;
-    background-color: lightgray;
-}
-
-.content div *{
-    display: block;
-    margin-bottom: 5px;
-}
-
-.content img{
-    width: 100px;
-    height: 100px;
 }
 
 @media screen and (max-width: 1000px){

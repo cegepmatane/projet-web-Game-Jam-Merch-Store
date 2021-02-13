@@ -25,6 +25,7 @@
             <a href="../index.php">Retour aux vues publiques</a>
             <a href="ajouter-item.php">Ajouter un produit</a>
             <a href="modifier-item.php">Modifier un produit</a>
+            <a href="supprimer-item.php">Supprimer un produit</a>
 
         </section>
     </body>
