@@ -18,7 +18,7 @@ $listeItem = PromotemyjamDAO::listerItems();
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Supprimer un produit promotionnel</title>
 </head>
 
@@ -42,7 +42,7 @@ $listeItem = PromotemyjamDAO::listerItems();
             {
         ?>
                 <div class="itemListe">
-                    <a href="item.php?id=<?php echo $item["id"]; ?>"><img src="img/test.png" alt="Item"></a>
+                    <a href="item.php?id=<?php echo $item["id"]; ?>"><img src="../img/test.png" alt="Item"></a>
                     <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
                 </div>
         <?php

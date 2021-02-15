@@ -23,7 +23,7 @@ $item = PromotemyjamDAO::lireItem($id);
         <a href="index.php">Retour</a>
 
         <div class="item">
-            <img src="img/test.png" alt="Item">
+            <img src="img/<?php echo $item['image']; ?>" width="250" height="250" alt="Item">
             <h2 class="itemTitre" style="text-align: center;"><?php echo $item['nom']; ?></h2>
         </div>
 
