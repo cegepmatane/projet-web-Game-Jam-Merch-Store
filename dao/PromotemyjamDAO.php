@@ -5,7 +5,7 @@ class PromotemyjamDAO{
 
     //Permet de détailler les valeurs d'un item
     public static function lireItem($id){
-        $MESSAGE_SQL_ITEM = "SELECT id, nom, type, description, prix, image, id_collection FROM item WHERE id=:id;";
+        $MESSAGE_SQL_ITEM = "SELECT id, nom, type, description, prix, taille, image FROM item WHERE id=:id;";
 
         $requete = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_ITEM);
         $requete->bindParam(':id', $id, PDO::PARAM_INT);
@@ -58,7 +58,7 @@ class PromotemyjamDAO{
                                 ":id_collection". 
                             ");";
 
-        $id = $item->getNom();
+        $nom = $item->getNom();
         $type =$item->getType();
         $description = $item->getDescription();
         $prix = $item->getPrix();
@@ -66,7 +66,7 @@ class PromotemyjamDAO{
         $id_collection = $item->getIdCollection();
 
         $requete = BaseDeDonnees::getConnexion()->prepare($REQUETE_AJOUTER_ITEM);
-        $requete->bindParam(':nom', $id, PDO::PARAM_STR);
+        $requete->bindParam(':nom', $nom, PDO::PARAM_STR);
         $requete->bindParam(':type', $type, PDO::PARAM_STR);
         $requete->bindParam(':description', $description, PDO::PARAM_STR);
         $requete->bindParam(':prix', $prix, PDO::PARAM_INT);
@@ -84,14 +84,24 @@ class PromotemyjamDAO{
                                 "`nom`= :nom,".
                                 "`type`= :type,". 
                                 "`description`= :description,". 
-                                "`prix`= :prix,". 
+                                "`prix`= :prix,".
+                                "`image`= :image". 
                             " WHERE id=:id;";
+
+        $nom = $item->getNom();
+        $type =$item->getType();
+        $description = $item->getDescription();
+        $prix = $item->getPrix();
+        $image = $item->getImage();
+        $id = $item->getId();
+
         $requete = BaseDeDonnees::getConnexion()->prepare($REQUETE_MODIFIER_ITEM);
-        $requete->bindParam(':nom', $item->getNom(), PDO::PARAM_STR);
-        $requete->bindParam(':type', $item->getType(), PDO::PARAM_STR);
-        $requete->bindParam(':description', $item->getDescription(), PDO::PARAM_STR);
-        $requete->bindParam(':prix', $item->getPrix(), PDO::PARAM_INT);
-        $requete->bindParam(':id', $item->getId(), PDO::PARAM_INT);
+        $requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $requete->bindParam(':type', $type, PDO::PARAM_STR);
+        $requete->bindParam(':description', $description, PDO::PARAM_STR);
+        $requete->bindParam(':prix', $prix, PDO::PARAM_INT);
+        $requete->bindParam(':image', $image, PDO::PARAM_STR);
+        $requete->bindParam(':id', $id, PDO::PARAM_INT);
         $reussiteModif = $requete->execute();
 
         return $reussiteModif;

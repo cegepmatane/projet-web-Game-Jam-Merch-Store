@@ -1,26 +1,13 @@
 <?php 
 
+include "../include/configuration.php";
+require CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
+
 //Recevoir l'id de l'item avec GET
+$idItem = filter_input(INPUT_GET, 'id');
 
-//Échaufaud
-$item = array(
-    "id" => 3,
-    "nom" => "Chemise Paf le Roi",
-    "type" => "vetement",
-    "description" => "La meilleure chemise pour aller fracasser des monarques !",
-    "taille" => "l",
-    "prix" => 35,
-    "image" => "../public/img/item2.png",
-    "id_collection" => 1
-);
-
-$tailles = array(
-    "vetement" => "Vêtement",
-    "tasse" => "Tasse",
-    "tableau" => "Tableau",
-    "ballon" => "Ballon",
-    "coque-telephone" => "Coque de téléphone"
-);
+//Récuperer l'item avec son ID
+$item = PromotemyjamDAO::lireItem($idItem);
 
 ?>
 
@@ -42,21 +29,21 @@ $tailles = array(
 
         <!--MAIN-->
         <section class="contenu-page">
-            <form method="post" id="formulaire-item" action="../admin/liste-admin.php"  enctype="multipart/form-data">
+            <form method="post" id="formulaire-item" action="traitement-modifier.php"  enctype="multipart/form-data">
                 <fieldset>
                     <legend>Informations sur le produit:</legend>
                     <!-- <label for="collection-item">Inclure dans quelle collection ?</label> -->
-                    <input type="hidden" id="id-collection" name="id-collection" value="<?php echo $item['id_collection']; ?>">
+                    <input type="hidden" id="id" name="id" value="<?php echo $item['id']; ?>">
                     
                     <div id="bloc-item">
                         <div id="informations-item">
-                            <label for="nom-item">Nom</label>
-                            <input type="text" id="nom-item" name="nom-item" value="<?php  echo $item['nom']; ?>">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" name="nom" value="<?php  echo $item['nom']; ?>">
     
-                            <label for="prix-item">Prix</label>
-                            <input type="text" id="prix-item" name="prix-item" value="<?php echo $item['prix']; ?>">
+                            <label for="prix">Prix</label>
+                            <input type="text" id="prix" name="prix" value="<?php echo $item['prix']; ?>">
                     
-                            <select name="type-item" id="type-item">
+                            <select name="type" id="type">
                                 <option value="">--Type de produit--</option>
                                 <option value="vetement" <?php if($item['type'] == 'vetement'){ echo ' selected="selected"'; } ?>>Vêtement</option>
                                 <option value="tasse" <?php if($item['type'] == 'tasse'){ echo ' selected="selected"'; } ?>>Tasse</option>
@@ -65,15 +52,17 @@ $tailles = array(
                                 <option value="coque-telephone" <?php if($item['type'] == 'coque-telephone'){ echo ' selected="selected"'; } ?>>Coque de téléphone</option>
                             </select>
     
-                            <label for="description-item">Description</label>
-                            <textarea id="description-item" name="description-item" placeholder="Décrire brièvement l'article" cols="45" rows="10"><?php echo $item['description']; ?></textarea>
+                            <label for="description">Description</label>
+                            <textarea id="description" name="description" placeholder="Décrire brièvement l'article" cols="45" rows="10"><?php echo $item['description']; ?></textarea>
                         </div>
     
-                        <div id="options-item">
-                            <?php if($item['image'] != null) echo '<p>Illustration actuelle</p>' ?>
-                            <img class="miniature" src="<?php echo $item['image']; ?>" alt="" >
-                            <input type="file" name="image-item" id="image-item" accept="image/*" value="<?php echo $item['image']; ?>">
-
+                        <div id="options">
+                            <?php if($item['image'] != null) echo '<p>Illustration actuelle</p>'; ?>
+                            <img class="miniature" src="../img/<?php echo $item['image']; ?>" alt="image item">
+                            <input type="file" name="image" id="image" accept="image/*">
+                            <input type="hidden" id="ancienne-image" name="ancienne-image" value="<?php echo $item['image']; ?>">
+                            
+                            <?php if(isset($item['taille'])) { ?>
                             <ul id="tailles">
                                 <label>Taille</label>
                                 <li><input type="radio" value="xs" name="taille" <?php if($item['taille'] == 'xs'){ echo 'checked'; } ?>>XS</li>
@@ -83,12 +72,13 @@ $tailles = array(
                                 <li><input type="radio" value="xl" name="taille" <?php if($item['taille'] == 'xl'){ echo 'checked'; } ?>>XL</li>
                                 <li><input type="radio" value="xxl" name="taille" <?php if($item['taille'] == 'xxl'){ echo 'checked'; } ?>>XXL</li>
                             </ul>
+                            <?php } ?>
                         </div>
                     </div>
 
                     <div id="action-formulaire">
                         <a href="liste-admin.php"><input type="button" value="Annuler" name="action-annuler-modifier"></a>
-                        <input type="submit" value="Enregistrer" name="action-modifier-item">
+                        <input type="submit" value="Enregistrer" name="action-modifier">
                     </div>
                 </fieldset>
             </form>

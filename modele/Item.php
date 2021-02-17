@@ -9,8 +9,9 @@ class Item {
     private $image;
     private $id_collection;
 
-    function __construct($nom=null, $type=null, $description=null, $prix=null, $image=null, $id_collection=null)
+    function __construct($id=null, $nom=null, $type=null, $description=null, $prix=null, $image=null, $id_collection=null)
     {
+        $this->id = $id;
         $this->nom = $nom;
         $this->type = $type;
         $this->description = $description;

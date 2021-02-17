@@ -40,7 +40,7 @@ $listeItem = PromotemyjamDAO::listerItems();
             {
         ?>
                 <div class="itemListe">
-                    <a href="../item.php?id=<?php echo $item["id"]; ?>"><img src="../img/<?php echo $item['image']; ?>" width="150" height="150" alt="Item"></a>
+                    <a href="modifier-item.php?id=<?php echo $item["id"]; ?>"><img src="../img/<?php echo $item['image']; ?>" width="150" height="150" alt="Item"></a>
                     <h2 class="itemTitre" style="text-align: center;"><?= $item["nom"]; ?></h2>
                 </div>
         <?php
