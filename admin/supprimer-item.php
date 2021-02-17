@@ -1,6 +1,7 @@
 <?php
 
-include "../include/configuration.php";
+define("CHEMIN_ACCESSEUR", $_SERVER["DOCUMENT_ROOT"]."/projet-web/dao/");
+define("CHEMIN_INCLUDE", $_SERVER["DOCUMENT_ROOT"]."/projet-web/include/");
 
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
