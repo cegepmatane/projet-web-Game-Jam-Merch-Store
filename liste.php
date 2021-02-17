@@ -7,7 +7,6 @@ require_once CHEMIN_INCLUDE."entete.php";
 
 //Récupération des collections
 $listeCollections = PromotemyjamDAO::listerCollections();
-
 //Recuperation des items
 //TODO Faire la liste selon la collection
 $listeItem = PromotemyjamDAO::listerItems();
@@ -23,14 +22,15 @@ $listeItem = PromotemyjamDAO::listerItems();
 </head>
 
 <body>
+    <div id="bouton-retour">
+        <a href="index.php">Retour</a>
+    </div>
     <?php
     foreach($listeCollections as $collection)
     {
     ?>
 
     <section class="section">
-        <a href="index.php">Retour</a>
-
         <h1 class="titre"><?php echo $collection["nom"]; ?></h1>
         <div class="contain">
         
