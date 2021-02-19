@@ -32,6 +32,13 @@ $listeItem = PromotemyjamDAO::listerItems();
         <h1 class="titre"><?php echo $collection["nom"]; ?></h1>
         <div class="contain">
         
+        <section class="contenu-page">
+            <a href="ajouter-item.php">Ajouter un produit</a>
+            <a href="modifier-item.php">Modifier un produit</a>
+            <a href="supprimer-item.php">Supprimer un produit</a>
+
+        </section>
+            
         <?php
         foreach($listeItem as $item)
         {
