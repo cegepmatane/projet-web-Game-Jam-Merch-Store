@@ -22,17 +22,17 @@ $listeItem = PromotemyjamDAO::listerItems();
 </head>
 
 <body>
-    <div id="bouton-retour">
-        <a href="index.php">Retour</a>
+    <div id="btnr">
+        <a class="bouton-retour" href="index.html"><img src="img/retour.png"></a>
     </div>
     <?php
     foreach($listeCollections as $collection)
     {
     ?>
 
-    <section class="section">
+    <section class="section-liste">
         <h1 class="titre"><?php echo $collection["nom"]; ?></h1>
-        <div class="contain">
+        <div class="contain-liste">
         
         <?php
         foreach($listeItem as $item)

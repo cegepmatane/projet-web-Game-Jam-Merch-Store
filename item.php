@@ -19,7 +19,10 @@ $item = PromotemyjamDAO::lireItem($id);
 </head>
 
 <body>
-    <section class="section">
+	<div class="btnr">
+	<a class="bouton-retour" href="index.html"><img src="img/retour.png"></a>
+    </div>
+    <section class="section-item">
         <a href="index.php">Retour</a>
 
         <div class="item">
