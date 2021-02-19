@@ -1,49 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../css/style.css" />
 <title>Page Title</title>
 <style>
-    div div{
-        display: inline-block;
-        margin: 20px;
-    }
-
-    .tete , .content{
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    .tete *{
-        position: relative;
-        width: 200px;
-        height: 200px;
-        margin: 0 6em;
-        background-size: 200px 200px;
-    }
-
-    .content div{
-        width: fit-content;
-        height: fit-content;
-        padding: 10px;
-        border-radius: 5%;
-        background-color: lightgray;
-    }
-
-    .content div *{
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .content img{
-        width: 100px;
-        height: 100px;
-    }
 </style>
 </head>
 <body>
-
-<a href="../admin/liste-admin.php">Panneau d'administration</a>
-<div class="tete">
+<div class="barre-panadmin">
+<a class="panadmin" href="../admin/liste-admin.php">Panneau d'administration</a>
+</div>
+<div class="tete-index">
     <a href="liste.html"><div style="background-image: url('./img/item2.png');"></div></a>
     <a href="liste.html"><div style="background-image: url('./img/item3.png');"></div></a>
 </div>

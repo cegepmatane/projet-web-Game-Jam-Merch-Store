@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin-top: 10px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -82,6 +82,12 @@ ul{
     margin: 5% 0;
 }
     
+a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
 #action-formulaire{
     display: flex;
     justify-content: space-between;
@@ -110,11 +116,23 @@ ul{
 
 .item{
     float: left;
-    width: 25%;
 }
 
-section{
-    margin-top: 20%;
+.section-liste *{
+    border: none;
+
+}
+
+.section-liste{
+    margin-bottom: 400px;
+	height:100%;
+
+}
+
+.section-item{
+    position: center;
+    margin: 0 10% ;
+
 }
 
 .itemListe{
@@ -128,22 +146,31 @@ section{
     text-align: center;
 }
 
-    div div{
-        display: inline-block;
-        margin: 20px;
+.contain-liste{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+div div{
+    display: inline-block;
+    margin: 20px;
     }
 
-    .tete , .content{
-        width: fit-content;
-        margin: 0 auto;
+.tete-index , .content{
+    width: fit-content;
+    margin: 0 auto;
     }
 
-    .tete *{
-        position: relative;
-        width: 200px;
-        height: 200px;
-        margin: 0 6em;
-        background-size: 200px 200px;
+.tete-index *{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 110px;
+    background-size: 200px 200px;
+    text-decoration: none;
+    border: none;
+
     }
 
     .content div{
@@ -163,9 +190,15 @@ section{
         width: 100px;
         height: 100px;
     }
-    
 .panadmin{
 	border: black solid 2px;
+    background-color: white;
+	margin-left: 10px;
+}
+.barre-panadmin{
+	height: 44px;
+    padding-top: 10px;
+    background-color: gray;
 }
 
 
@@ -177,18 +210,30 @@ section{
         .leftBar img {
             float: none;
             display: block;
-            height: 223px;
-            width: 321px;
+			width: fit-content;
+			height: fit-content;
             
         }
 
+        .i1 {
+            margin: 0 120px; 
+        }
+
+        .i2 {
+            margin: 0 50px; 
+        }
+
+        .i3 {
+            margin: 0 220px; 
+        }
+
         .missionBox{
-            margin-top: 12em;
+            margin: 6em 50%;
             position: relative;
-            border: solid 3px black;
+			border:black solid 2px;
             border-radius: 15%;
             width: 22em;
-            height: 13em;
+            height: 15em;
         }
 
         .missionBox p {
@@ -199,6 +244,16 @@ section{
         ul{
             list-style-type: none;
         }
+
+.bouton-retour img{
+	height: 100px;
+	margin-top: -10px;
+}	
+
+.btnr *{
+	border: none;
+}	
+
 .titre{
     border:black solid 2px;
 }
