@@ -168,13 +168,13 @@ a{
 
 div div{
     display: inline-block;
-    margin: 20px;
-    }
+    margin: 10px;
+}
 
 .tete-index , .content{
     width: fit-content;
     margin: 0 auto;
-    }
+}
 
 .tete-index *{
     position: relative;
@@ -312,7 +312,7 @@ div div{
 
 #formulaire-paiement{
     width: 85%;
-    margin: 0 auto;
+    margin: 1% auto;
 }
     #formulaire-paiement fieldset
     {
@@ -334,16 +334,42 @@ div div{
 #informations-cote > div{
     border: solid black 1px;
 }
-    
-.article img
-{
-    float: left;
-    margin: 1%;
+
+#montants{
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.article span{
-    float: right;
-    font-size: larger;
+#montants > *{
+    display: flex;
+    flex-direction: row;
+
+}
+
+#montant-total{
+    font-weight: bold;
+}
+
+#montants #action-formulaire{
+    position: absolute;
+    align-self: center;
+    justify-content: space-around;
+    align-content: space-around;
+    bottom: 0;
+}
+
+.article
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 120px;
+}
+
+#texte-article{
+    flex-basis: 90%;
 }
 
 @media screen and (max-width: 1000px){
