@@ -340,16 +340,23 @@ div div{
     display: flex;
     flex-direction: column;
     position: relative;
+    align-content: space-between;
+
 }
 
-#montants > *{
+#montants *{
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between;
+    align-content: space-between;
 }
 
 #montant-total{
     font-weight: bold;
+}
+
+#montants p {
+    width: 100%;
 }
 
 #montants #action-formulaire{
@@ -376,14 +383,14 @@ div div{
     margin: 1%;
 }
 
-.adresse-livraison{
+#adresse-livraison{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.adresse-livraison input[type=text],
-.adresse-livraison label{
+#adresse-livraison input[type=text],
+#adresse-livraison label{
     flex-basis: 50%;
 }
 

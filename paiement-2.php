@@ -47,7 +47,7 @@ require_once CHEMIN_INCLUDE."entete.php";
                             <span>Aucune information à fournir. Le paiement par PayPal est obligatoire.</span>
                         </div>
                         <h5>Adresse de livraison</h5>
-                        <div class="adresse-livraison">
+                        <div id="adresse-livraison">
                             <input type="checkbox" id="adresse-compte" name="adresse-compte" onclick="desactiverChampsAdresse();">
                             <label for="adresse-compte">Utiliser l'adresse associée à mon compte</label>
                             <label for="prenom">
