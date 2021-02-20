@@ -22,7 +22,8 @@ $filtresAjoutItem["id-collection"] = FILTER_SANITIZE_NUMBER_INT;
 $item_arr = filter_input_array(INPUT_POST, $filtresAjoutItem);
 $item_arr["image"] = $image;
 
-$item = new Item($item_arr['nom'],
+$item = new Item(null,
+                $item_arr['nom'],
                 $item_arr['type'],
                 $item_arr['description'],
                 $item_arr['prix'],

@@ -39,6 +39,7 @@ $item = new Item($item_arr['id'],
                 $item_arr['description'],
                 $item_arr['prix'], 
                 $item_arr['image'],
+                null
             );
 
 //print_r($item);
