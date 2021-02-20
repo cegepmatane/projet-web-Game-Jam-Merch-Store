@@ -15,8 +15,9 @@ $listeItem = PromotemyjamDAO::listerItems();
     <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-	<div class="barre-panadmin">
-        <a class="panadmin" href="admin/liste-admin.php">Panneau d'administration</a>
+	<div class="barre-navigation">
+        <a class="navigation-admin" href="admin/liste-admin.php">Panneau d'administration</a>
+        <a class="navigation-utilisateur" href="inscription.php">Créer un compte</a>
 	</div>
         <div class="tete-index">
             <a href="liste.php"><div style="background-image: url('./img/item2.png');"></div></a>

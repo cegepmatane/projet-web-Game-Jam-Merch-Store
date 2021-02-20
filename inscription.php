@@ -45,4 +45,3 @@ require_once CHEMIN_INCLUDE."entete.php";
 <?php
     require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
-
