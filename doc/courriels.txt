@@ -1,0 +1,26 @@
+/****************************************************************************/
+COURRIEL DE CONFIRMATION D'INSCRIPTION
+/****************************************************************************/
+
+Bonjour [nom_membre] !
+
+Merci de vous être inscrits sur notre merveilleux site Promote My Jam !
+Vous faites officiellement partie de la grande famille cliente.
+Vous pouvez maintenant accéder à votre espace client en visitant www.promotemyjam.sote/connexion.php.
+Vous n'aurez plus qu'à entrer votre nom d'utilisateur et votre mot de passe pour vous connecter et accéder à vos informations personnelles et reçus de paiement.
+
+Nous vous souhaitons un bon séjour en notre compagnie !
+
+Cordialement,
+L'équipe Promote My Jam
+
+
+/****************************************************************************/
+COURRIEL DE CONFIRMATION DE PAIEMENT
+/****************************************************************************/
+
+Bonjour [nom_membre],
+
+Merci pour votre achat sur notre site. Voici la facture concernant votre transaction:
+
+//Affichage de la facture
