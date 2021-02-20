@@ -12,7 +12,7 @@ require_once CHEMIN_INCLUDE."entete.php";
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page Inscription</title>
+    <title>Page Paiement</title>
 </head>
 <body>
     <!--HEADER-->
@@ -27,7 +27,7 @@ require_once CHEMIN_INCLUDE."entete.php";
 
      <!--MAIN-->
      <section class="contenu-page">
-            <form method="post" id="formulaire-paiement" action="traitement-paiement.php">
+            <form method="post" id="formulaire-paiement" action="paiement-2.php">
                 <fieldset>
                     <legend>Étape 1/3 - Vérification du panier</legend>
                     <div id="informations-panier">

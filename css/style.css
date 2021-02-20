@@ -372,6 +372,22 @@ div div{
     flex-basis: 90%;
 }
 
+#informations-paiement h5{
+    margin: 1%;
+}
+
+.adresse-livraison{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.adresse-livraison input[type=text],
+.adresse-livraison label{
+    flex-basis: 50%;
+}
+
+
 @media screen and (max-width: 1000px){
     #item{
         flex-direction: column;

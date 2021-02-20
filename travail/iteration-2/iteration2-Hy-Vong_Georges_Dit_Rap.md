@@ -8,7 +8,7 @@ Travail: 1 heure
 ## Issue: Programmer les vues (#23)
 ### https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/23
 
-Travail: 4 heures
+Travail: 5 heures
 
 
-### Total des heures : 5 heures
+### Total des heures : 6 heures
