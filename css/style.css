@@ -282,7 +282,7 @@ div div{
     border:black solid 2px;
 }
 
-#formulaire-inscription{
+#formulaire-authentification{
     width: 40%;
     background-color: lightgrey;
     margin: 0 auto;
@@ -290,7 +290,7 @@ div div{
     border-radius: 8px;
 }
 
-    #formulaire-inscription input
+    #formulaire-authentification input
     {
         width: 60%;
         height: 45px;
@@ -298,13 +298,13 @@ div div{
         border-radius: 5px;
     }
 
-    #formulaire-inscription label
+    #formulaire-authentification label
     {
         width: 60%;
         margin: 1% auto;
     }
 
-    #formulaire-inscription input[type=submit]
+    #formulaire-authentification input[type=submit]
     {
         width: 40%;
     }

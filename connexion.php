@@ -12,7 +12,7 @@ require_once CHEMIN_INCLUDE."entete.php";
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page Inscription</title>
+    <title>Page Connexion</title>
 </head>
 <body>
     <div id="btnr">
@@ -20,17 +20,8 @@ require_once CHEMIN_INCLUDE."entete.php";
     </div>
      <!--MAIN-->
      <section class="contenu-page">
-            <form method="post" id="formulaire-authentification" action="traitement-inscription.php">
+            <form method="post" id="formulaire-authentification" action="traitement-connexion.php">
                 <div id="bloc-authentification">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom">
-                    
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom">
-
-                    <label for="nom-utilisateur">Nom d'utilisateur</label>
-                    <input type="text" id="nom-utilisateur" name="nom-utilisateur">
-
                     <label for="adresse-courriel">Adresse courriel</label>
                     <input type="email" id="adresse-courriel" name="adresse-courriel">
 
@@ -38,7 +29,7 @@ require_once CHEMIN_INCLUDE."entete.php";
                     <input type="password" id="mdp" name="mdp">    
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="S'inscrire" name="action-inscription">
+                    <input type="submit" value="Se connecter" name="action-connexion">
                 </div>
             </form>
         </section>
