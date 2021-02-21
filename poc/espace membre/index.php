@@ -4,26 +4,24 @@ require "MembreDAO.php";
 
 if(isset($_POST['forminscription'])){
 
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $nom = htmlspecialchars($_POST['nom']);
-    $mail = htmlspecialchars($_POST['mail']);
-    $password = sha1($_POST['password']);
-    $password2 = sha1($_POST['password2']);
+    $filterMembre = array();
+    $filterMembre['prenom'] = FILTER_SANITIZE_STRING;
+    $filterMembre['nom'] = FILTER_SANITIZE_STRING;
+    $filterMembre['mail'] = FILTER_SANITIZE_STRING;
+    $filterMembre['motdepasse'] = FILTER_SANITIZE_STRING;
+    $filterMembre['motdepasse2'] = FILTER_SANITIZE_STRING;
+    $membre = filter_input_array(INPUT_POST, $filterMembre);
 
-    if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['password']) AND !empty($_POST['password2'])){
-        $pseudolength = strlen($pseudo);
-        if($pseudolength <= 255){
-            if($nom <= 255){
-                if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                    if($password == $password2){
-                        $filterMembre = [];
+    $membre['prenom'] = htmlspecialchars($membre['prenom']);
+    $membre['nom'] = htmlspecialchars($membre['nom']);
+    $membre['mail'] = htmlspecialchars($membre['mail']);
+    $membre['motdepasse'] = password_hash($membre['motdepasse'], PASSWORD_DEFAULT);
 
-                        $filterMembre['prenom'] = FILTER_SANITIZE_STRING;
-                        $filterMembre['nom'] = FILTER_SANITIZE_STRING;
-                        $filterMembre['mail'] = FILTER_SANITIZE_STRING;
-                        $filterMembre['password'] = FILTER_SANITIZE_STRING;
-
-                        $membre = filter_input_array(INPUT_POST, $filterMembre);
+    if(!empty($_POST['prenom']) AND !empty($_POST['nom']) AND !empty($_POST['mail']) AND !empty($_POST['motdepasse']) AND !empty($_POST['motdepasse2'])){
+        if(strlen($membre['prenom']) <= 255){
+            if(strlen($membre['nom']) <= 255){
+                if(filter_var($membre['mail'], FILTER_VALIDATE_EMAIL)){
+                    if(password_verify($membre['motdepasse2'], $membre['motdepasse'])){
                         $reussiteAjout = MembreDAO::enregistrerMembre($membre);
                     } else {
                         $erreur = "Les mots de passe doivent correspondres !";
@@ -75,12 +73,12 @@ if(isset($_POST['forminscription'])){
                         <td><input type="email" placeholder="Votre mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>"/></td>
                     </tr>
                     <tr>
-                        <td align="right"><label for="password">Mot de passe :</label></td>
-                        <td><input type="password" placeholder="Votre mot de passe" name="password"/></td>
+                        <td align="right"><label for="motdepasse">Mot de passe :</label></td>
+                        <td><input type="password" placeholder="Votre mot de passe" name="motdepasse"/></td>
                     </tr>
                     <tr>
-                        <td align="right"><label for="password2">Mot de passe :</label></td>
-                        <td><input type="password" placeholder="Confirmez votre mot de passe" name="password2"/></td>
+                        <td align="right"><label for="motdepasse2">Mot de passe :</label></td>
+                        <td><input type="password" placeholder="Confirmez votre mot de passe" name="motdepasse2"/></td>
                     </tr>
                     <tr>
                         <br/>
@@ -94,8 +92,6 @@ if(isset($_POST['forminscription'])){
             if(isset($erreur))
             {
                 echo '<font color="red">'.$erreur."</font>";
-            } else if($reussiteAjout) {
-                echo 'Ajout bien envoyer';
             }
             ?>
         
