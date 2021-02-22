@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    width: 100%;
+    height: 400px;
+
+    background-color: gray;
+    text-align: center;
+    color: white;
+}
+
+footer{
+    color: #eeeeee;
+    background-color: #212121;
+    height: 150px;
+    margin-top: 5%;
+    padding: 2%;
+}
+
+.contenu-page{
+    width: 100%;
+    height: max-content;
+    margin: 20px auto;
+}
+
+#formulaire-item{
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.2em;
+}
+
+    #formulaire-item legend{
+        text-align: left;
+    }
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea,
+select
+{
+    margin-top: 1%;
+    margin-bottom: 5%;
+    resize: none;
+    display: block;
+}
+
+
+label{
+    font-size: 0.8em;
+    width: 100%;
+    color: #365778;
+    display: block;
+}
+
+#informations-item{
+    /*float: left;*/
+    width: 45%;
+    margin: 2%;
+}
+
+#options-item{
+    width: 45%;
+    margin: 2%;
+}
+
+    #options-item input[type=radio]{
+        margin: 2%;
+    }
+
+    #options-item li{
+        display: block;
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+#image-item{
+    width: 100%;
+    margin: 10% auto;
+}
+
+
+ul{
+    margin: 5% 0;
+}
+    
+a{
+    text-decoration: none;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+#action-formulaire{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    margin: 1% auto;
+    width: 95%;
+}
+
+    #action-formulaire input[type=button],
+    #action-formulaire input[type=submit]
+    {
+        flex-basis: auto;
+        padding: 5px;
+        border-radius: 2px;
+        background-color: #454647;
+        font-size: 1rem;
+        color: white;
+    }
+
+#bloc-item #bloc-inscription{
+    display: flex;
+    flex-direction: row;
+}
+
+.miniature{
+    width: 300px;
+    height: auto;
+}
+
+.item{
+    float: left;
+}
+
+.section-liste *{
+    border: none;
+
+}
+
+.section-liste{
+    margin-bottom: 400px;
+	height:100%;
+
+}
+
+.section-item{
+    position: center;
+    margin: 0 10% ;
+
+}
+
+.itemListe{
+    float: left;
+    display: inline;
+}
+
+.contain{
+    width: 75%;
+    height: 100%;
+    text-align: center;
+}
+
+.contain-liste{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+div div{
+    display: inline-block;
+    margin: 10px;
+}
+
+.tete-index , .content{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.tete-index *{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 110px;
+    background-size: 200px 200px;
+    text-decoration: none;
+    border: none;
+
+    }
+
+    .content div{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        border-radius: 5%;
+        background-color: lightgray;
+    }
+
+    .content div *{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .content img{
+        width: 100px;
+        height: 100px;
+    }
+
+.navigation-admin{
+	border: black solid 2px;
+    background-color: white;
+	margin-left: 10px;
+}
+
+.navigation-utilisateur{
+	border: black solid 2px;
+    background-color: white;
+	margin-right: 10px;
+    float: right;
+}
+
+.barre-navigation{
+	height: 44px;
+    padding-top: 10px;
+    background-color: gray;
+}
+
+
+        .leftBar{
+            float: left;
+            margin: 0 20px 0 20px;
+        }
+
+        .leftBar img {
+            float: none;
+            display: block;
+			width: fit-content;
+			height: fit-content;
+            
+        }
+
+        .i1 {
+            margin: 0 120px; 
+        }
+
+        .i2 {
+            margin: 0 50px; 
+        }
+
+        .i3 {
+            margin: 0 220px; 
+        }
+
+        .missionBox{
+            margin: 6em 50%;
+            position: relative;
+			border:black solid 2px;
+            border-radius: 15%;
+            width: 22em;
+            height: 15em;
+        }
+
+        .missionBox p {
+            margin: 20px;
+            text-align: center;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+
+.bouton-retour img{
+	height: 100px;
+	margin-top: -10px;
+}	
+
+#btnr *{
+	border: none;
+    margin: 1%;
+}	
+
+.titre{
+    border:black solid 2px;
+}
+
+#formulaire-authentification{
+    width: 40%;
+    background-color: lightgrey;
+    margin: 0 auto;
+    padding: 2% 0;
+    border-radius: 8px;
+}
+
+    #formulaire-authentification input
+    {
+        width: 60%;
+        height: 45px;
+        margin: 0 auto 4% auto;
+        border-radius: 5px;
+    }
+
+    #formulaire-authentification label
+    {
+        width: 60%;
+        margin: 1% auto;
+    }
+
+    #formulaire-authentification input[type=submit]
+    {
+        width: 40%;
+    }
+
+
+#formulaire-paiement, #historique{
+    width: 85%;
+    margin: 1% auto;
+}
+    #formulaire-paiement fieldset
+    {
+        width: 100%;
+        display: flex;
+    }
+
+    #formulaire-paiement fieldset > div:first-of-type,{
+        flex-basis: 65%;
+        border: solid black 1px;
+    }
+
+    #formulaire-paiement fieldset > div{
+        margin: 1% 2%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #historique > a > div{
+        width: 90%;
+        border: solid black 1px;
+        margin: 2% auto;
+    }
+
+    #historique a, #historique a:visited{
+        color: black;
+        text-decoration: none;
+        border: none;
+    }
+
+#informations-cote > div{
+    border: solid black 1px;
+}
+
+#montants{
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-content: space-between;
+
+}
+
+#montants *{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+#montant-total{
+    font-weight: bold;
+}
+
+#montants p {
+    width: 100%;
+}
+
+#montants #action-formulaire{
+    position: absolute;
+    align-self: center;
+    justify-content: space-around;
+    align-content: space-around;
+    bottom: 0;
+}
+
+.article
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 120px;
+}
+
+.commande{
+    display: flex;
+    justify-content: flex-start;
+    height: 110px;
+    overflow: auto;
+}
+
+#texte-article{
+    flex-basis: 90%;
+}
+
+#informations-paiement h5{
+    margin: 1%;
+}
+
+#adresse-livraison{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+#adresse-livraison input[type=text],
+#adresse-livraison label{
+    flex-basis: 50%;
+}
+
+#adresse-livraison #action-formulaire{
+    justify-content: flex-end;
+    align-content: space-around;
+    bottom: 0;
+    right: 0;
+}
+
+.formulaire-profil{
+    width: 75%;
+    margin: 1% auto;
+}
+
+    .formulaire-profil fieldset
+    {
+        width: 100%;
+        display: flex;
+    }
+
+#tete-profil{
+    width: 55%;
+    margin: 2% auto;
+    overflow: auto;
+}
+
+    #tete-profil img{
+        margin: 0 auto;
+        float: left;
+    }
+
+#informations-compte{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+    #informations-compte input[type=text],
+    #informations-compte label{
+        flex-basis: 40%;
+        margin: 1%;
+    }
+
+    #informations-compte input[type=button]{
+        width: 20%;
+        margin: 1%;
+    }
+
+@media screen and (max-width: 1000px){
+    #item{
+        flex-direction: column;
+    }
+
+
+}
