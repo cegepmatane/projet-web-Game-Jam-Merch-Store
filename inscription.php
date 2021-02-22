@@ -38,8 +38,7 @@ require_once CHEMIN_INCLUDE."entete.php";
                     <input type="password" id="mdp" name="mdp">    
                 </div>
                 <div id="action-formulaire">
-				<form action="malto:arceusyo@gmail.com method="GET">
-    <input name="subject" type="text" />
+				<form action="mailto:arceusyo@gmail.com method="GET" name="subject" type="text" >
     <textarea name="body"></textarea>
     <input type="submit" value="Send" />
 </form>
