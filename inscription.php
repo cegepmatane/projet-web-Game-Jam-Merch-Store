@@ -37,9 +37,8 @@ require_once CHEMIN_INCLUDE."entete.php";
                     <label for="mdp">Mot de passe</label>
                     <input type="password" id="mdp" name="mdp">    
                 </div>
-                <div class="button" id="action-formulaire" onclick="location.href='mailto:arceusyo@gmail.com';">Send E-Mail 
-                    <input type="submit" value="S'inscrire" name="action-inscription" href = "mailto:estebanescudero282@gmail.com?subject = Feedback&body = Message"
-					Send Feedback >
+                <div id="action-formulaire">
+                    <input type="submit" value="S'inscrire" name="action-inscription">
                 </div>
             </form>
         </section>
