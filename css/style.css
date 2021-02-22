@@ -310,7 +310,7 @@ div div{
     }
 
 
-#formulaire-paiement{
+#formulaire-paiement, #historique{
     width: 85%;
     margin: 1% auto;
 }
@@ -320,7 +320,7 @@ div div{
         display: flex;
     }
 
-    #formulaire-paiement fieldset > div:first-of-type{
+    #formulaire-paiement fieldset > div:first-of-type,{
         flex-basis: 65%;
         border: solid black 1px;
     }
@@ -329,6 +329,18 @@ div div{
         margin: 1% 2%;
         display: flex;
         flex-direction: column;
+    }
+
+    #historique > a > div{
+        width: 90%;
+        border: solid black 1px;
+        margin: 2% auto;
+    }
+
+    #historique a, #historique a:visited{
+        color: black;
+        text-decoration: none;
+        border: none;
     }
 
 #informations-cote > div{
@@ -373,6 +385,13 @@ div div{
     justify-content: flex-start;
     align-items: center;
     height: 120px;
+}
+
+.commande{
+    display: flex;
+    justify-content: flex-start;
+    height: 110px;
+    overflow: auto;
 }
 
 #texte-article{
@@ -443,7 +462,6 @@ div div{
         width: 20%;
         margin: 1%;
     }
-
 
 @media screen and (max-width: 1000px){
     #item{
