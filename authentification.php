@@ -12,7 +12,7 @@ require_once CHEMIN_INCLUDE."entete.php";
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page Connexion</title>
+    <title>Page authentification</title>
 </head>
 <body>
     <div id="btnr">
@@ -29,7 +29,7 @@ require_once CHEMIN_INCLUDE."entete.php";
                     <input type="password" id="mdp" name="mdp">    
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="Se connecter" name="action-connexion">
+                    <input type="submit" value="Se connecter" name="action-authentification">
                 </div>
             </form>
         </section>

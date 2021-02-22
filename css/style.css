@@ -387,12 +387,62 @@ div div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    position: relative;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 #adresse-livraison input[type=text],
 #adresse-livraison label{
     flex-basis: 50%;
 }
+
+#adresse-livraison #action-formulaire{
+    justify-content: flex-end;
+    align-content: space-around;
+    bottom: 0;
+    right: 0;
+}
+
+.formulaire-profil{
+    width: 75%;
+    margin: 1% auto;
+}
+
+    .formulaire-profil fieldset
+    {
+        width: 100%;
+        display: flex;
+    }
+
+#tete-profil{
+    width: 55%;
+    margin: 2% auto;
+    overflow: auto;
+}
+
+    #tete-profil img{
+        margin: 0 auto;
+        float: left;
+    }
+
+#informations-compte{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+    #informations-compte input[type=text],
+    #informations-compte label{
+        flex-basis: 40%;
+        margin: 1%;
+    }
+
+    #informations-compte input[type=button]{
+        width: 20%;
+        margin: 1%;
+    }
 
 
 @media screen and (max-width: 1000px){
