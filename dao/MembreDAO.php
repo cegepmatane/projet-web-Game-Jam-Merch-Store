@@ -37,7 +37,7 @@ class MembreDAO{
 
     public static function lireMail($mail)
     {
-        $MESSAGE_SQL_MAIL = "SELECT * FROM membre WHERE mail=:mail";
+        $MESSAGE_SQL_MAIL = "SELECT * FROM membre WHERE courriel=:mail";
 
         $requeteMail = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MAIL);
         $requeteMail->bindParam(':mail', $mail, PDO::PARAM_STR);
