@@ -34,6 +34,16 @@ $item = PromotemyjamDAO::lireItem($id);
 
             <h1>Page item prototype</h1>
             <p><?php echo $item['description']; ?></p>
+			<?php if ($item['stock'] > 0 && $item['id_button'] <> NULL) { ?>
+				<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="<?php echo $item['id_button']; ?>">
+					<input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+					<img alt="" border="0" src="https://www.paypalobjects.com/fr_CA/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			<?php } else { ?>
+				<p>Actuellement indisponible</p>
+			<?php } ?>
         </div>
     </section>
 
