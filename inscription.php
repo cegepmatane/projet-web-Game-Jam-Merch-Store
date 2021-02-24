@@ -1,4 +1,4 @@
-a<?php
+<?php
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
@@ -51,7 +51,7 @@ if(isset($_POST['action-inscription'])){
                                 <html>
                                     <body>
                                         <div align='center'>
-                                            <a href='https://www.promotemyjam.store/confirmation.php?prenom='" . urlencode($membre['prenom']) . "&key" . $key . "'>Confrimez votre compte</a>
+                                        <a href='https://www.promotemyjam.store/confirmation.php?id='" . urlencode($membre['id']) . "&key" . $key . "'>Confrimez votre compte</a>
                                         </div>
                                     </body>
                                 </html>
