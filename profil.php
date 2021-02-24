@@ -2,6 +2,15 @@
 
 include "include/configuration.php";
 require_once CHEMIN_ACCESSEUR."MembreDAO.php";
+ 
+mysql_select_db("membre") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
+connections.');
+    if (isset($_SESSION['id'])){
+	($pdo->prepare("SELECT * FROM membre WHERE id = ?"))->execute(array($_SESSION['id']));
+	$id = (int)$_POST['id'];
+	$result mysql_query("SELECT * FROM membre WHERE id = $id");
+	$affiche_data  = mysql_fetch_assoc($result);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +50,13 @@ require_once CHEMIN_ACCESSEUR."MembreDAO.php";
    
 </form>
                 <label for="nom-utilisateur">
-                
+                <?php
+                if (isset($nom)){
+                ?>
+                    <div><?= $nom ?></div>
+                <?php   
+                }
+            ?>
             <input type="text" placeholder="Votre nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>   
             
 					<input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
