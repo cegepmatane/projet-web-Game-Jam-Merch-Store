@@ -6,7 +6,7 @@ Issue: Inscription + authentification (#18) <br>
 https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/18 <br>
 Travail: 6 heure <br> 
 <br>
-Issue: Inscription + authentification (#16) <br> 
+Issue: Rattrapage itération 1 (#16) <br> 
 https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/16 <br>
 Travail: 3 heure <br> 
 <br> 
