@@ -20,4 +20,20 @@ class MembreDAO{
         $reussiteInscription = $requeteInscriptionMembre->execute();
         return $reussiteInscription;
     }
+
+    public static function validerConnexion($connexionMembre){
+        $MESSAGE_SQL_VALIDER_CONNEXION = "SELECT prenom, nom, nom_utilisateur, courriel, mot_de_passe
+                                            FROM membre
+                                            WHERE nom_utilisateur=:nom_utilisateur AND mot_de_passe = :mot_de_passe;";
+
+        $requeteValiderConnexion = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_VALIDER_CONNEXION);
+
+        $requeteValiderConnexion->bindParam(':nom_utilisateur', $connexionMembre["nom_utilisateur"], PDO::PARAM_STR);
+        $requeteValiderConnexion->bindParam(':mot_de_passe', $connexionMembre["mot_de_passe"], PDO::PARAM_STR);
+
+        $requeteValiderConnexion->execute();
+        
+        $membre = $requeteValiderConnexion->fetch();
+        return $membre;
+    }
 }

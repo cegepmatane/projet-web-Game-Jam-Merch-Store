@@ -30,12 +30,27 @@ if(isset($_POST['action-inscription'])){
                         if(password_verify($membre['mot_de_passe_confirmation'], $membre['mot_de_passe'])){
                             $reussiteAjout = MembreDAO::enregistrerMembre($membre);
 
-                            $envoyeur_courriel = "blobivon@yahoo.fr";
-                            $sujet_courriel = "Inscription ".$membre['nom_utilisateur'];
-                            $contenu_courriel = "Merci de vous être inscrit.";
-                            $destinataire_courriel = $membre['courriel'];
+                            if($reussiteAjout){
+                                $envoyeur_courriel = "www-data@mail.freehv.me";
+                                $sujet_courriel = "Inscription ".$membre['nom_utilisateur'];
+                                $contenu_courriel = "Bonjour " . $membre['prenom'] . " " . $membre['nom'] . " !
+                                
+                                Merci de vous etre inscrits sur notre merveilleux site Promote My Jam !
+                                Vous faites officiellement partie de la grande famille cliente.
+                                Vous pouvez maintenant acceder a votre espace client en visitant www.promotemyjam.sote/authentification.php
+                                Vous n'aurez plus qu'a entrer votre nom d'utilisateur et votre mot de passe pour vous connecter et acceder a vos informations personnelles et recus de paiement.
+                                
+                                Nous vous souhaitons un bon sejour en notre compagnie !
+                                
+                                Cordialement,
+                                L'equipe Promote My Jam";
+                                
+                                $destinataire_courriel = $membre['courriel'];
+    
+                                mail($destinataire_courriel, $sujet_courriel, $contenu_courriel);
 
-                            mail($destinataire_courriel, $sujet_courriel, $contenu_courriel);
+                                header('location: index.php');
+                            }
                         } else {
                             $erreur = "Les mots de passe doivent correspondre !";
                         }
