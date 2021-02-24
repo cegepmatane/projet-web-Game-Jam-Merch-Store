@@ -6,7 +6,6 @@ require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
 
  
-    // On récupère les informations de l'utilisateur connecté
     $afficher_profil = $pdo->query("SELECT * FROM membre WHERE id = ?", array($_SESSION['id']));
 
     $afficher_profil = $afficher_profil->fetch();
