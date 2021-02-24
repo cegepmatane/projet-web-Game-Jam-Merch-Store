@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
@@ -19,6 +18,7 @@ if(isset($_POST['action-authentification'])){
             if(password_verify($membre['mot_de_passe'], $user['mot_de_passe'])){
                 $_SESSION['membre']['id'] = $user['id'];
                 $_SESSION['membre']['prenom'] = $user['prenom'];
+                $_SESSION['membre']['nom_utilisateur'] = $user['nom_utilisateur'];
                 $_SESSION['membre']['nom'] = $user['nom'];
                 $_SESSION['membre']['courriel'] = $user['courriel'];
                 $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];

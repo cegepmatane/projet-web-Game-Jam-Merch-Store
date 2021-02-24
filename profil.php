@@ -2,13 +2,14 @@
 
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
- 
-	if (isset($_GET['action_edition_profil']))
-	{
-		
-$result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
-while($affiche_commentaire = mysql_fetch_array($result))
-    {
+
+if (isset($_GET['action_edition_profil']))
+{
+    
+    $result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
+    //while($affiche_commentaire = mysql_fetch_array($result)){}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ while($affiche_commentaire = mysql_fetch_array($result))
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page Paiement</title>
+    <title>Page Profil</title>
 </head>
 <body>
     <!--HEADER-->
@@ -34,36 +35,15 @@ while($affiche_commentaire = mysql_fetch_array($result))
         <div id="tete-profil">
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
-			<form action="profil.php?id=<?php echo $id;?>" method="post">
-   nom:
-
-" type="text" />
-
-
-   prenom:
-
-" type="text" />
-
- 
-   
-</form>
+			<!-- <form action="profil.php?id=<?php echo $id;?>" method="post">
+            </form> -->
                 <label for="nom-utilisateur">
-                <?php
-                if (isset($nom)){
-                ?>
-                    <div><?= $nom ?></div>
-                <?php   
-                }
-            ?>
-            <input type="text" placeholder="Votre nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>   
-            
-					<input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
-					
+					Nom d'utilisateur<input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
                 </label>
                 <input type="button" value="Changer">
 
                 <label for="courriel">
-                    Courriel <input type="email" id="courriel" name="courriel">
+                    Courriel <input type="email" id="courriel" name="courriel" value="<?php if(isset($_SESSION['membre']['courriel'])) { echo $_SESSION['membre']['courriel']; } ?>">
                 </label>
                 <input type="button" value="Changer">
 
@@ -78,11 +58,11 @@ while($affiche_commentaire = mysql_fetch_array($result))
                 <legend>Informations personnelles</legend>
                 <div id="adresse-livraison">
                     <label for="prenom">
-                        Prénom <input type="text" id="prenom" name="prenom">
+                        Prénom <input type="text" id="prenom" name="prenom" value="<?php if(isset($_SESSION['membre']['prenom'])) { echo $_SESSION['membre']['prenom']; } ?>">
                     </label>
 
                     <label for="nom">
-                        Nom <input type="text" id="nom" name="nom">
+                        Nom <input type="text" id="nom" name="nom" value="<?php if(isset($_SESSION['membre']['nom'])) { echo $_SESSION['membre']['nom']; } ?>">
 					</label>
 
                     <label for="numero-rue">
@@ -117,6 +97,6 @@ while($affiche_commentaire = mysql_fetch_array($result))
         </form>
     </section>
 <?php
-}
+
     require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
