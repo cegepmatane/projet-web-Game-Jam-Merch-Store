@@ -6,7 +6,6 @@ require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
 
 if (!isset($_SESSION['id'])){
-        header('Location: index.php');
         exit;
     }
  
