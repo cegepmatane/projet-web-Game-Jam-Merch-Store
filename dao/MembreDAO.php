@@ -34,4 +34,31 @@ class MembreDAO{
 
         return $membre;
     }
+
+    public static function selectId($id, $confirmkey)
+    {
+        $MESSAGE_SQL_SELECT_ID = "SELECT * FROM membre WHERE id=:id AND confirmkey = :confirmkey;";
+
+        $requete = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_SELECT_ID);
+        $requete->bindParam(':id', $id, PDO::PARAM_INT);
+        $requete->bindParam('confirmkey', $confirmkey, PDO::PARAM_STR);
+
+        $requete->execute();
+        $membre = $requete;
+
+        return $membre;
+    }
+
+    public static function updateConfirmation($id)
+    {
+        $MESSAGE_SQL_UPDATE = "UPDATE membre SET confirme = 1 WHERE id = :id;";
+
+        $requeteUpdate = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_UPDATE);
+        $requeteUpdate->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $requeteUpdate->execute();
+        $membre = $requeteUpdate;
+
+        return $membre;
+    }
 }
