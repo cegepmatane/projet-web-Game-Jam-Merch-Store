@@ -112,7 +112,6 @@ if(isset($_POST['action-inscription'])){
                     <input type="password" id="mot_de_passe_confirmation" name="mot_de_passe_confirmation">
                 </div>
                 <div id="action-formulaire">
-				<form method="post" action="mailto:$arceusyo@gmail.com?subject=$MySubject &message= $MyMessageText">
                     <input type="submit" value="S'inscrire" name="action-inscription">
                 </div>
             </form>

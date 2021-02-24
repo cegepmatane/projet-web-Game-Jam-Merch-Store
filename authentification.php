@@ -23,7 +23,7 @@ if(isset($_POST['action-authentification'])){
                 $_SESSION['membre']['courriel'] = $user['courriel'];
                 $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 
-                header("Location: index.php?id=".$_SESSION['membre']['id']); //redirection sur la page de notre choix avec l'id de session
+                header("Location: index.php"); //redirection sur la page de notre choix avec l'id de session
             } else {
                 $erreur = "Votre mot de passe est incorrect !";
             }
