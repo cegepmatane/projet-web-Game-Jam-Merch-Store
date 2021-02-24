@@ -36,7 +36,7 @@ if(isset($_POST['action-inscription'])){
                     if(filter_var($membre['courriel'], FILTER_VALIDATE_EMAIL)){
                         if(password_verify($membre['mot_de_passe_confirmation'], $membre['mot_de_passe'])){
                             $reussiteAjout = MembreDAO::enregistrerMembre($membre);
-                            $lireMembre = MembreDAO::lireMail($membre['mail']);
+                            $lireMembre = MembreDAO::lireMail($membre['courriel']);
 
                             if($reussiteAjout){
                                 $envoyeur_courriel = "www-data@mail.freehv.me";

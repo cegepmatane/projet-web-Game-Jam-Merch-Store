@@ -14,10 +14,10 @@ require CHEMIN_ACCESSEUR."MembreDAO.php";
             $user = $requete->fetch();
             if($user['confirme'] == 0)
             {
-                echo "Votre compe a bien ete confirme !";
+                echo "Votre compte a bien ete confirme !";
                 MembreDAO::updateConfirmation($id);
             } else {
-                echo "Votre compe a deja ete confirme !";
+                echo "Votre compte a deja ete confirme !";
             }
         } else {
             echo "L'utilisateur n'existe pas !";
