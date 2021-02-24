@@ -2,10 +2,10 @@
 
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
- 
+
 	if (isset($_GET['action_edition_profil']))
 	{
-		
+
 $result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
 while($affiche_commentaire = mysql_fetch_array($result)){
 ?>
@@ -43,8 +43,8 @@ while($affiche_commentaire = mysql_fetch_array($result)){
 
 " type="text" />
 
- 
-   
+
+
 </form>
                 <label for="nom-utilisateur">
                 <?php
@@ -54,9 +54,9 @@ while($affiche_commentaire = mysql_fetch_array($result)){
                 }
             ?>
             <input type="text" placeholder="Votre nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>   
-            
+           
 					<input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
-					
+
                 </label>
                 <input type="button" value="Changer">
 
@@ -115,6 +115,6 @@ while($affiche_commentaire = mysql_fetch_array($result)){
         </form>
     </section>
 <?php
-}.
+}
     require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
