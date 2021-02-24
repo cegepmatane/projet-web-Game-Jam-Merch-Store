@@ -1,8 +1,7 @@
 <?php
 
 include "include/configuration.php";
-require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
-require_once CHEMIN_INCLUDE."entete.php";
+require_once CHEMIN_ACCESSEUR."MembreDAO.php";
 ?>
 
 <!DOCTYPE html>
