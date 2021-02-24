@@ -7,8 +7,7 @@ require CHEMIN_ACCESSEUR."MembreDAO.php";
 	{
 		
 $result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
-while($affiche_commentaire = mysql_fetch_array($result))
-    {
+while($affiche_commentaire = mysql_fetch_array($result)){
 ?>
 
 <!DOCTYPE html>
