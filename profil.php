@@ -115,6 +115,8 @@ while($affiche_commentaire = mysql_fetch_array($result)){
         </form>
     </section>
 </body>
+</html>
 <?php
-}require_once CHEMIN_INCLUDE."pied-page.php";
+}
+require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
