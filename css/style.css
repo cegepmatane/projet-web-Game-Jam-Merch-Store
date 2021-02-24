@@ -320,7 +320,7 @@ div div{
         display: flex;
     }
 
-    #formulaire-paiement fieldset > div:first-of-type,{
+    #formulaire-paiement fieldset > div:first-of-type{
         flex-basis: 65%;
         border: solid black 1px;
     }
