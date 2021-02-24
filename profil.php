@@ -48,9 +48,8 @@ while($affiche_commentaire = mysql_fetch_array($result)){
 </form>
                 <label for="nom-utilisateur">
                 <?php
-				if(isset($nom)){
-                ?>
-                    <div><?= $nom ?></div>
+				if(isset($nom)){?>
+				<div><?= $nom ?></div>
                 <?php   
                 }
             ?>
