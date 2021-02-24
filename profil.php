@@ -32,17 +32,31 @@ require_once CHEMIN_INCLUDE."entete.php";
             <div id="informations-compte">
                 <label for="nom-utilisateur">
                     Nom d'utilisateur <input type="text" id="nom-utilisateur" name="nom-utilisateur">
+					<?php
+if(isset($_GET['id']))
+{
+  $query = "SELECT nom_utilisateur FROM membre WHERE id = ".$_GET['id'];
+}
+else die("Aucun utilisateur choisi");
+?>
                 </label>
                 <input type="button" value="Changer">
 
                 <label for="courriel">
                     Courriel <input type="email" id="courriel" name="courriel">
-                </label>
+                <?php
+if(isset($_GET['id']))
+{
+  $query = "SELECT courriel FROM membre WHERE id = ".$_GET['id'];
+}
+else die("Aucun courriel choisi");
+?>
+				</label>
                 <input type="button" value="Changer">
 
                 <label for="mdp">
                    Mot de passe <input type="password" id="mdp" name="mdp">
-                </label>
+				</label>
                 <input type="button" value="Changer">
             </div>
         </div>
@@ -52,15 +66,36 @@ require_once CHEMIN_INCLUDE."entete.php";
                 <div id="adresse-livraison">
                     <label for="prenom">
                         Prénom <input type="text" id="prenom" name="prenom">
-                    </label>
+                    <?php
+if(isset($_GET['id']))
+{
+  $query = "SELECT prenom FROM membre WHERE id = ".$_GET['id'];
+}
+else die("Aucun prénom choisi");
+?>
+					</label>
 
                     <label for="nom">
                         Nom <input type="text" id="nom" name="nom">
-                    </label>
+                    <?php
+if(isset($_GET['id']))
+{
+  $query = "SELECT nom FROM membre WHERE id = ".$_GET['id'];
+}
+else die("Aucun nom choisi");
+?>
+					</label>
 
                     <label for="numero-rue">
                         Num. rue <input type="text" id="numero-rue" name="numero-rue">
-                    </label>
+                    <?php
+if(isset($_GET['id']))
+{
+  $query = "SELECT nom_utilisateur FROM membre WHERE id = ".$_GET['id'];
+}
+else die("Aucun utilisateur choisi");
+?>
+					</label>
 
                     <label for="numero-appartement">
                         Appt/Chambre <input type="text" id="numero-appartement" name="numero-appartement">
