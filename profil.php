@@ -31,14 +31,15 @@ require_once CHEMIN_INCLUDE."entete.php";
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
                 <label for="nom-utilisateur">
-                    Nom d'utilisateur <input type="text" id="nom-utilisateur" name="nom-utilisateur">
-					<?php
-if(isset($_GET['id']))
-{
-  $query = "SELECT nom_utilisateur FROM membre WHERE id = ".$_GET['id'];
-}
-else die("Aucun utilisateur choisi");
-?>
+				<?php
+                if (isset($nom_utilisateur)){
+                ?>
+                    <div><?= $nom_utilisateur ?></div>
+				<?php
+                }
+                ?>
+                    Nom d'utilisateur <input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
+					
                 </label>
                 <input type="button" value="Changer">
 
@@ -73,6 +74,7 @@ if(isset($_GET['id']))
 }
 else die("Aucun prénom choisi");
 ?>
+<a href='profil.php?id=<?php $donnees['id'];?>'>
 					</label>
 
                     <label for="nom">
