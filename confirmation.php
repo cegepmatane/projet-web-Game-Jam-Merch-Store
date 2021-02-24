@@ -3,7 +3,7 @@
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
-    if(isset($_GET['id'], $_GET['key']) AND !empty($GET['id']) AND !empty($_GET['key'])){
+    if(!empty($_GET['id']) AND !empty($_GET['key'])){
         $id = htmlspecialchars($_GET['id']);
         $key = htmlspecialchars($_GET['key']);
 
@@ -15,11 +15,14 @@ require CHEMIN_ACCESSEUR."MembreDAO.php";
             if($user['confirme'] == 0)
             {
                 echo "Votre compe a bien ete confirme !";
+                MembreDAO::updateConfirmation($id);
             } else {
                 echo "Votre compe a deja ete confirme !";
             }
         } else {
             echo "L'utilisateur n'existe pas !";
         }
+    } else {
+        echo "Les paramètres n'ont pas été bien reçus.";
     }
 ?>

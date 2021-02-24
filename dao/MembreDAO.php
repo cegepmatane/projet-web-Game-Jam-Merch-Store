@@ -68,8 +68,8 @@ class MembreDAO{
         $requeteUpdate->bindParam(':id', $id, PDO::PARAM_INT);
 
         $requeteUpdate->execute();
-        $membre = $requeteUpdate;
+        // $membre = $requeteUpdate;
 
-        return $membre;
+        // return $membre;
     }
 }
