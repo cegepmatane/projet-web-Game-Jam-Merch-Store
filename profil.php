@@ -5,72 +5,6 @@ include "include/configuration.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
 
-if (!isset($_SESSION['id'])){
-        exit;
-    }
- 
-    // On récupère les informations de l'utilisateur connecté
-    $afficher_profil = $DB->query("SELECT * 
-        FROM membre 
-        WHERE id = ?",
-        array($_SESSION['id']));
-    $afficher_profil = $afficher_profil->fetch();
- 
-    if(!empty($_POST)){
-        extract($_POST);
-        $valid = true;
- 
-        if (isset($_POST['modification'])){
-            $nom = htmlentities(trim($nom));
-            $prenom = htmlentities(trim($prenom));
-            $mail = htmlentities(strtolower(trim($mail)));
- 
-            if(empty($nom)){
-                $valid = false;
-                $er_nom = "Il faut mettre un nom";
-            }
- 
-            if(empty($prenom)){
-                $valid = false;
-                $er_prenom = "Il faut mettre un prénom";
-            }
- 
-            if(empty($mail)){
-                $valid = false;
-                $er_mail = "Il faut mettre un mail";
- 
-            }elseif(!preg_match("/^[a-z0-9\-_.]+@[a-z]+\.[a-z]{2,3}$/i", $mail)){
-                $valid = false;
-                $er_mail = "Le mail n'est pas valide";
- 
-            }else{
-                $req_mail = $DB->query("SELECT mail 
-                    FROM membre 
-                    WHERE courriel = ?",
-                    array($mail));
-                $req_mail = $req_mail->fetch();
- 
-                if ($req_mail['mail'] <> "" && $_SESSION['mail'] != $req_mail['mail']){
-                    $valid = false;
-                    $er_mail = "Ce mail existe déjà";
-                }
-            }
- 
-            if ($valid){
- 
-                $DB->insert("UPDATE membre SET prenom = ?, nom = ?, courriel = ? 
-                    WHERE id = ?", 
-                    array($prenom, $nom,$mail, $_SESSION['id']));
- 
-                $_SESSION['nom'] = $nom;
-                $_SESSION['prenom'] = $prenom;
-                $_SESSION['courriel'] = $mail;
- 
-                header('Location:  profil.php');
-                exit;
-            }   
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -97,28 +31,20 @@ if (!isset($_SESSION['id'])){
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
                 <label for="nom-utilisateur">
-				<?php
-                if (isset($nom)){
+                    Nom d'utilisateur <input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
+					<?php
+                if (isset($nom_utilisateur)){
                 ?>
-                    <div><?= $nom ?></div>
+                    <div><?= $nom_utilisateur ?></div>
 				<?php
                 }
                 ?>
-                    Nom d'utilisateur <input type="text" placeholder="Votre nom id="nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>
-					
                 </label>
                 <input type="button" value="Changer">
 
                 <label for="courriel">
                     Courriel <input type="email" id="courriel" name="courriel">
-                <?php
-if(isset($_GET['id']))
-{
-  $query = "SELECT courriel FROM membre WHERE id = ".$_GET['id'];
-}
-else die("Aucun courriel choisi");
-?>
-				</label>
+                </label>
                 <input type="button" value="Changer">
 
                 <label for="mdp">
@@ -133,36 +59,14 @@ else die("Aucun courriel choisi");
                 <div id="adresse-livraison">
                     <label for="prenom">
                         Prénom <input type="text" id="prenom" name="prenom">
-                    <?php
-if(isset($_GET['id']))
-{
-  $query = "SELECT prenom FROM membre WHERE id = ".$_GET['id'];
-}
-else die("Aucun prénom choisi");
-?>
-<a href='profil.php?id=<?php $donnees['id'];?>'>
-					</label>
+                    </label>
 
                     <label for="nom">
                         Nom <input type="text" id="nom" name="nom">
-                    <?php
-if(isset($_GET['id']))
-{
-  $query = "SELECT nom FROM membre WHERE id = ".$_GET['id'];
-}
-else die("Aucun nom choisi");
-?>
 					</label>
 
                     <label for="numero-rue">
                         Num. rue <input type="text" id="numero-rue" name="numero-rue">
-                    <?php
-if(isset($_GET['id']))
-{
-  $query = "SELECT nom_utilisateur FROM membre WHERE id = ".$_GET['id'];
-}
-else die("Aucun utilisateur choisi");
-?>
 					</label>
 
                     <label for="numero-appartement">
