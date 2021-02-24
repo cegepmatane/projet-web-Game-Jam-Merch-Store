@@ -4,7 +4,7 @@ include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
     if(isset($_GET['id'], $_GET['key']) AND !empty($GET['id']) AND !empty($_GET['key'])){
-        $id = htmlspecialchars(urldecode($_GET['id']));
+        $id = htmlspecialchars($_GET['id']);
         $key = htmlspecialchars($_GET['key']);
 
         $requete = MembreDAO::selectId($id, $key);

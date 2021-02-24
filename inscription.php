@@ -42,24 +42,19 @@ if(isset($_POST['action-inscription'])){
                                 $envoyeur_courriel = "www-data@mail.freehv.me";
                                 $sujet_courriel = "Inscription ".$membre['nom_utilisateur'];
                                 $contenu_courriel = "Bonjour " . $membre['prenom'] . " " . $membre['nom'] . " !
-                                
-                                Merci de vous etre inscrits sur notre merveilleux site Promote My Jam !
-                                Vous faites officiellement partie de la grande famille cliente.
-                                Vous pouvez maintenant acceder a votre espace client en visitant www.promotemyjam.sote/authentification.php
-                                Vous n'aurez plus qu'a entrer votre nom d'utilisateur et votre mot de passe pour vous connecter et acceder a vos informations personnelles et recus de paiement.
-                                
-                                Merci de confirmer votre mail en cliquant sur le lien suivant : 
-                                <html>
-                                    <body>
-                                        <div align='center'>
-                                        <a href='https://www.promotemyjam.store/confirmation.php?id='" . $lireMembre['id'] . "&key=" . $key . "'>Confrimez votre compte</a>
-                                        </div>
-                                    </body>
-                                </html>
-                                Nous vous souhaitons un bon sejour en notre compagnie !
-                                
-                                Cordialement,
-                                L'equipe Promote My Jam";
+
+Merci de vous etre inscrits sur notre merveilleux site Promote My Jam !
+Vous faites officiellement partie de la grande famille cliente.
+Vous pouvez maintenant acceder a votre espace client en visitant www.promotemyjam.store/authentification.php
+
+Vous n'aurez plus qu'a entrer votre nom d'utilisateur et votre mot de passe pour vous connecter et acceder a vos informations personnelles et recus de paiement.
+Merci de confirmer votre mail en cliquant sur le lien suivant : 
+https://www.promotemyjam.store/confirmation.php?id=" . $lireMembre['id'] . "&key=" . $membre['confirmkey'] . "
+
+Nous vous souhaitons un bon sejour en notre compagnie !
+
+Cordialement,
+L'equipe Promote My Jam";
                                 
                                 $destinataire_courriel = $membre['courriel'];
     

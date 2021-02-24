@@ -43,7 +43,7 @@ class MembreDAO{
         $requeteMail->bindParam(':mail', $mail, PDO::PARAM_STR);
         
         $requeteMail->execute();
-        $membre = $requeteMail;
+        $membre = $requeteMail->fetch();
 
         return $membre;
     }
@@ -57,9 +57,7 @@ class MembreDAO{
         $requete->bindParam('confirmkey', $confirmkey, PDO::PARAM_STR);
 
         $requete->execute();
-        $membre = $requete;
-
-        return $membre;
+        return $requete;
     }
 
     public static function updateConfirmation($id)

@@ -13,7 +13,7 @@ Travail: 9 heures
 ## Issue: Composante de compte membre (#18)
 ### https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/18
 
-Travail: 4 heures
+Travail: 6 heures
 
 
-### Total des heures : 15 heures
+### Total des heures : 17 heures
