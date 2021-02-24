@@ -48,7 +48,7 @@ if(isset($_POST['formConnexion'])){
 
         <div align="center">
 
-            <h2>Inscription</h2>
+            <h2>Connexion</h2>
 
             <form method="POST" action ="">
                 <table>
