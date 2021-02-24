@@ -3,17 +3,6 @@
 include "include/configuration.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
- 
-mysql_select_db("membre") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
-connections.');
-    $query = "SELECT * FROM membre WHERE id = "._GET['id'];
-$retour = mysql_query($query);
-while ($donnees = mysqul_fetch_array($retour))
-{
-	echo "# : ".$donnees['id']."<br />
-	pseudo : ".$donnees['pseudo']."<br />
-	etc... ";
-}
 ?>
 
 <!DOCTYPE html>
