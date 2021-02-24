@@ -21,16 +21,13 @@ if ($verified) {
 
     $mail = new PHPMailer();
 
-    $mail->setFrom( "ventes@dvmax.xyz", "Service de Ventes En ligne - promotemyjam");
+    $mail->setFrom( "ventes@promotemyjam.store", "Service de Ventes En ligne - promotemyjam");
     $mail->addAddress($_POST['payer_email'], $nom);
     $mail->isHTML(true);
     $mail->Subject = "Vos détails d'achat";
-    $mail->Body = "$nom, merci pour votre achat! <br><br>
-    Objets achetés : <br>
-        $item - $prix $monnaie
-    <br><br>
-    Status de paiement : $Status";
-
+    $mail->Body = "Bonjour $nom,<br><br>
+    Merci pour votre achat sur notre site. Voici la facture concernant votre transaction : <br>
+        $item - $prix $monnaie";
     $mail->send();
 }
 
