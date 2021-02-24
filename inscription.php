@@ -1,8 +1,14 @@
-<?php
+a<?php
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
 if(isset($_POST['action-inscription'])){
+
+    $longueurKey = 15;
+    $key = "";
+    for($i=1;$i<$longueurKey;$i++){
+        $key .= mt_rand(0,9);
+    }
 
     $filterMembre = array();
     $filterMembre['prenom'] = FILTER_SANITIZE_STRING;
@@ -18,6 +24,7 @@ if(isset($_POST['action-inscription'])){
     $membre['nom_utilisateur'] = htmlspecialchars($membre['nom_utilisateur']);
     $membre['courriel'] = htmlspecialchars($membre['courriel']);
     $membre['mot_de_passe'] = password_hash($membre['mot_de_passe'], PASSWORD_DEFAULT);
+    $membre['confirmkey'] = $key;
 
     if(!empty($membre['prenom']) AND !empty($membre['nom'])
         AND !empty($membre['nom_utilisateur']) AND !empty($membre['courriel'])
@@ -40,6 +47,14 @@ if(isset($_POST['action-inscription'])){
                                 Vous pouvez maintenant acceder a votre espace client en visitant www.promotemyjam.sote/authentification.php
                                 Vous n'aurez plus qu'a entrer votre nom d'utilisateur et votre mot de passe pour vous connecter et acceder a vos informations personnelles et recus de paiement.
                                 
+                                Merci de confirmer votre mail en cliquant sur le lien suivant : 
+                                <html>
+                                    <body>
+                                        <div align='center'>
+                                            <a href='https://www.promotemyjam.store/confirmation.php?prenom='" . urlencode($membre['prenom']) . "&key" . $key . "'>Confrimez votre compte</a>
+                                        </div>
+                                    </body>
+                                </html>
                                 Nous vous souhaitons un bon sejour en notre compagnie !
                                 
                                 Cordialement,
