@@ -36,6 +36,7 @@ if(isset($_POST['action-inscription'])){
                     if(filter_var($membre['courriel'], FILTER_VALIDATE_EMAIL)){
                         if(password_verify($membre['mot_de_passe_confirmation'], $membre['mot_de_passe'])){
                             $reussiteAjout = MembreDAO::enregistrerMembre($membre);
+                            $lireMembre = MembreDAO::lireMail($membre['mail']);
 
                             if($reussiteAjout){
                                 $envoyeur_courriel = "www-data@mail.freehv.me";
@@ -51,7 +52,7 @@ if(isset($_POST['action-inscription'])){
                                 <html>
                                     <body>
                                         <div align='center'>
-                                        <a href='https://www.promotemyjam.store/confirmation.php?id='" . urlencode($membre['id']) . "&key" . $key . "'>Confrimez votre compte</a>
+                                        <a href='https://www.promotemyjam.store/confirmation.php?id='" . $lireMembre['id'] . "&key=" . $key . "'>Confrimez votre compte</a>
                                         </div>
                                     </body>
                                 </html>

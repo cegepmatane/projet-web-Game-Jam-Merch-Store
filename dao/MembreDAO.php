@@ -35,6 +35,19 @@ class MembreDAO{
         return $membre;
     }
 
+    public static function lireMail($mail)
+    {
+        $MESSAGE_SQL_MAIL = "SELECT * FROM membre WHERE mail=:mail";
+
+        $requeteMail = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MAIL);
+        $requeteMail->bindParam(':mail', $mail, PDO::PARAM_STR);
+        
+        $requeteMail->execute();
+        $membre = $requeteMail;
+
+        return $membre;
+    }
+
     public static function selectId($id, $confirmkey)
     {
         $MESSAGE_SQL_SELECT_ID = "SELECT * FROM membre WHERE id=:id AND confirmkey = :confirmkey;";
