@@ -3,11 +3,12 @@
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
  
-	if (isset($_GET['action_edition_profil'])){
+	if (isset($_GET['action_edition_profil']))
+	{
 		
 $result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
 while($affiche_commentaire = mysql_fetch_array($result))
-    }
+    {
 ?>
 
 <!DOCTYPE html>
@@ -116,5 +117,6 @@ while($affiche_commentaire = mysql_fetch_array($result))
         </form>
     </section>
 <?php
+}
     require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
