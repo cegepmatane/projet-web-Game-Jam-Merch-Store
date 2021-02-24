@@ -1,15 +1,12 @@
 <?php
 
 include "include/configuration.php";
-require_once CHEMIN_ACCESSEUR."MembreDAO.php";
+require CHEMIN_ACCESSEUR."MembreDAO.php";
  
-mysql_select_db("membre") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
-connections.');
-    if (isset($_SESSION['id'])){
-	($pdo->prepare("SELECT * FROM membre WHERE id = ?"))->execute(array($_SESSION['id']));
-	$id = (int)$_POST['id'];
-	$result mysql_query("SELECT * FROM membre WHERE id = $id");
-	$affiche_data  = mysql_fetch_assoc($result);
+	if (isset($_GET['action_edition_profil'])){
+		
+$result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
+while($affiche_commentaire = mysql_fetch_array($result))
     }
 ?>
 

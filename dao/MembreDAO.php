@@ -72,4 +72,17 @@ class MembreDAO{
 
         // return $membre;
     }
+
+    public static function updateProfil($id)
+    {
+        $MESSAGE_SQL_UPDATE_PROFIL = "UPDATE membre SET * WHERE id = :id;";
+
+        $requeteUpdateProfil = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_UPDATE_PROFIL);
+        $requeteUpdateProfil->bindParam(':id', $id, PDO::PARAM_INT);
+
+        $requeteUpdateProfil->execute();
+        // $membre = $requeteUpdate;
+
+        // return $membre;
+    }
 }
