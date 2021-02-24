@@ -4,7 +4,7 @@ include "include/configuration.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
  
-mysql_select_db("gestioncv") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
+mysql_select_db("membre") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
 connections.');
     if (isset($_SESSION['id'])){
 	($pdo->prepare("SELECT * FROM membre WHERE id = ?"))->execute(array($_SESSION['id']));
