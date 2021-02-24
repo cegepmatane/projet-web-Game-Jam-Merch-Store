@@ -5,7 +5,7 @@ class PromotemyjamDAO{
 
     //Permet de détailler les valeurs d'un item
     public static function lireItem($id){
-        $MESSAGE_SQL_ITEM = "SELECT id, nom, type, description, prix, taille, image FROM item WHERE id=:id;";
+        $MESSAGE_SQL_ITEM = "SELECT id, nom, type, description, prix, taille, image, stock, id_button FROM item WHERE id=:id;";
 
         $requete = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_ITEM);
         $requete->bindParam(':id', $id, PDO::PARAM_INT);
