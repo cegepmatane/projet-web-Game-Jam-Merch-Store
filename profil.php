@@ -31,8 +31,14 @@ require_once CHEMIN_INCLUDE."entete.php";
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
                 <label for="nom-utilisateur">
-                    Nom d'utilisateur 
-            <input type="text" placeholder="Votre nom" name="nom" value="<?php SELECT nom FROM membre WHERE id=3?>" required>   
+                <?php
+                if (isset($nom)){
+                ?>
+                    <div><?= $nom ?></div>
+                <?php   
+                }
+            ?>
+            <input type="text" placeholder="Votre nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>   
             
 					<input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
 					
