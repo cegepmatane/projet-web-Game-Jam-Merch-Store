@@ -4,7 +4,7 @@ require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 require_once CHEMIN_INCLUDE."entete.php";
 
 session_start();
-    include('bd/connexionDB.php');
+    include('dao/connexionDB.php');
  
     if (!isset($_SESSION['id'])){
         header('Location: index.php');
