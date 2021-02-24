@@ -38,7 +38,7 @@ require_once CHEMIN_INCLUDE."entete.php";
                 $er_mail = "Le courriel n'est pas valide";
  
             }else{
-                $req_mail = $DB->query("SELECT courriel 
+                $req_mail = $pdo->query("SELECT courriel 
                     FROM membre 
                     WHERE courriel = ?",
                     array($courriel));
@@ -52,7 +52,7 @@ require_once CHEMIN_INCLUDE."entete.php";
  
             if ($valid){
  
-                $DB->insert("UPDATE membre SET prenom = ?, nom = ?, courriel = ? 
+                $pdo->insert("UPDATE membre SET prenom = ?, nom = ?, courriel = ? 
                     WHERE id = ?", 
                     array($prenom, $nom,$courriel, $_SESSION['id']));
  
