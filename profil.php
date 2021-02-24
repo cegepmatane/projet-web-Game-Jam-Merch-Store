@@ -6,7 +6,7 @@ require_once CHEMIN_INCLUDE."entete.php";
  
 mysql_select_db("gestioncv") or die('Impossible de selectionner une base de donnee. Assurez vous d\'avoir correctement remplit les donneess de 
 connections.');
-    if (isset($_GET['id'])){
+    if (isset($_GET['idmembre'])){
 	$id = (int)$_GET['id'];
 	$result mysql_query("SELECT * FROM membre WHERE id = $id");
 	$affiche_data  = mysql_fetch_assoc($result);
