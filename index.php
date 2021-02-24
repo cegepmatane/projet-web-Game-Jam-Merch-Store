@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'include/configuration.php';
 
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";

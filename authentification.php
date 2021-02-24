@@ -16,14 +16,19 @@ if(isset($_POST['action-authentification'])){
         $user = MembreDAO::validerConnexion($membre);
         if(!empty($user['id'])){
             if(password_verify($membre['mot_de_passe'], $user['mot_de_passe'])){
-                $_SESSION['membre']['id'] = $user['id'];
-                $_SESSION['membre']['prenom'] = $user['prenom'];
-                $_SESSION['membre']['nom_utilisateur'] = $user['nom_utilisateur'];
-                $_SESSION['membre']['nom'] = $user['nom'];
-                $_SESSION['membre']['courriel'] = $user['courriel'];
-                $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
-
-                header("Location: index.php"); //redirection sur la page de notre choix avec l'id de session
+                if($membre['confirme'] == 1)
+                {
+                    $_SESSION['membre']['id'] = $user['id'];
+                    $_SESSION['membre']['prenom'] = $user['prenom'];
+                    $_SESSION['membre']['nom_utilisateur'] = $user['nom_utilisateur'];
+                    $_SESSION['membre']['nom'] = $user['nom'];
+                    $_SESSION['membre']['courriel'] = $user['courriel'];
+                    $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
+    
+                    header("Location: index.php"); //redirection sur la page de notre choix
+                } else {
+                    $erreur = "Vosu devez confirmer votre inscription avant de vous connecter.";
+                }
             } else {
                 $erreur = "Votre mot de passe est incorrect !";
             }
