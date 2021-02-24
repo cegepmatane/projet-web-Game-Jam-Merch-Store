@@ -33,7 +33,6 @@ if(isset($_POST['formConnexion'])){
         $erreur = "Tous les champs doivent etre completes !";
     }
 }
-
 ?>
 
 

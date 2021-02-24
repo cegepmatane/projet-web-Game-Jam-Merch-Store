@@ -1,24 +1,37 @@
 <?php
+session_start();
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
 if(isset($_POST['action-authentification'])){
 
-    $filterConnexion = array();
+    $filterMembre = array();
+    $filterMembre['courriel'] = FILTER_SANITIZE_STRING;
+    $filterMembre['mot_de_passe'] = FILTER_SANITIZE_STRING;
+    $membre = filter_input_array(INPUT_POST, $filterMembre);
 
-    $filterConnexion['courriel'] = FILTER_SANITIZE_EMAIL;
-    $filterConnexion['mot_de_passe'] = FILTER_SANITIZE_STRING;
-    $connexionMembre = filter_input_array(INPUT_POST, $filterConnexion);
-  
-    $connexionMembre['courriel'] = htmlspecialchars($connexionMembre['courriel']);
-    //$connexion['mot_de_passe'] = password_hash($connexion['mot_de_passe'], PASSWORD_DEFAULT);
+    $membre['courriel'] = htmlspecialchars($membre['courriel']);
+    // $membre['motdepasseConnect'] = $membre['motdepasseConnect'];  
 
+    if(!empty($membre['mot_de_passe']) AND !empty($membre['courriel'])){
+        $user = MembreDAO::validerConnexion($membre);
+        if(!empty($user['id'])){
+            if(password_verify($membre['mot_de_passe'], $user['mot_de_passe'])){
+                $_SESSION['membre']['id'] = $user['id'];
+                $_SESSION['membre']['prenom'] = $user['prenom'];
+                $_SESSION['membre']['nom'] = $user['nom'];
+                $_SESSION['membre']['courriel'] = $user['courriel'];
+                $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 
-    if(!empty($connexionMembre['courriel']) AND !empty($connexionMembre['mot_de_passe'])){
-        $_SESSION['membre'] = MembreDAO::validerConnexion($connexionMembre);
-        if(isset($_SESSION['membre']['nom_utilisateur'])){
-            header('location: index.php');
+                header("Location: index.php?id=".$_SESSION['membre']['id']); //redirection sur la page de notre choix avec l'id de session
+            } else {
+                $erreur = "Votre mot de passe est incorrect !";
+            }
+        } else {
+            $erreur = "L'utilisateur semble etre inexistant !";
         }
+    } else {
+        $erreur = "Tous les champs doivent etre completes !";
     }
 }
 ?>
@@ -36,13 +49,19 @@ if(isset($_POST['action-authentification'])){
     </div>
      <!--MAIN-->
      <section class="contenu-page">
-            <form method="post" id="formulaire-authentification" action="">
+            <?php
+            if(isset($erreur))
+            {
+                echo '<font color="red">'.$erreur."</font>";
+            }
+            ?>
+            <form method="post" id="formulaire-authentification" action="authentification.php">
                 <div id="bloc-authentification">
-                    <label for="adresse-courriel">Adresse courriel</label>
-                    <input type="email" id="adresse-courriel" name="adresse-courriel">
+                    <label for="courriel">Adresse courriel</label>
+                    <input type="email" id="courriel" name="courriel">
 
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" id="mdp" name="mdp">    
+                    <label for="mot_de_passe">Mot de passe</label>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe">    
                 </div>
                 <div id="action-formulaire">
                     <input type="submit" value="Se connecter" name="action-authentification">
