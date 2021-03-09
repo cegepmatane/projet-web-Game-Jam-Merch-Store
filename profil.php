@@ -20,17 +20,34 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 		$_SESSION['membre']['nom_utilisateur'] =  $nouveauNomUtilisateur;
 
 	}
+
 	if (isset($_POST['bouton-courriel']))
 	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauCourriel=$_REQUEST['courriel'];
+		$Courriel = MembreDAO::modifierProfilCourriel($id, $nouveauCourriel);
 
+		$_SESSION['membre']['courriel'] =  $nouveauCourriel;
 	}
+
 	if (isset($_POST['bouton-mdp']))
 	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauMotDePasse=$_REQUEST['mdp'];
+		$MotDePasse = MembreDAO::modifierProfilMotDePasse($id, $nouveauMotDePasse);
 
+		$_SESSION['membre']['mdp'] =  $nouveauMotDePasse;
 	}
+
 	if (isset($_POST['action-enregistrer-adresse']))
 	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauPrenom=$_REQUEST['prenom'];
+		$nouveauNom=$_REQUEST['nom'];
+		$Infos = MembreDAO::modifierProfilInfosPersonnelles($id, $nouveauPrenom, $nouveauNom);
 
+		$_SESSION['membre']['prenom'] =  $nouveauPrenom;
+		$_SESSION['membre']['nom'] =  $nouveauNom;
 	}
 
 	?>
