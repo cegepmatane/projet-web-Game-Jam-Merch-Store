@@ -90,6 +90,7 @@ class MembreDAO{
     {
       $MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR = "UPDATE membre SET nom_utilisateur = :nouveauNom WHERE id = :id";
       $requeteModifierNomUtilisateur = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR);
+      $requeteModifierNomUtilisateur->bindParam(':id', $id, PDO::PARAM_INT);
       $requeteModifierNomUtilisateur->bindParam(':nouveauNom', $nouveauNomUtilisateur, PDO::PARAM_STR);
       $requeteModifierNomUtilisateur->execute();
 
