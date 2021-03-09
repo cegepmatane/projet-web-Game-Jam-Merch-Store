@@ -58,18 +58,17 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 			<form action="" method="post">
 
 
-									<label for="nom-utilisateur">
-				           
-						<input type="text" placeholder="Votre nom d'utilisateur" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
-
+									<label for="nom-utilisateur"> 
+						Nom d'utilisateur<input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
 									</label>
+									
 									<input type="submit" name="bouton-nom-utilisateur" value="Changer">
 
 												</form>
 
 									<form action="" method="post">
 									<label for="courriel">
-											Courriel <input type="email" id="courriel" name="courriel">
+											Courriel <input type="email" id="courriel" name="courriel" value="<?php if(isset($_SESSION['membre']['courriel'])) { echo $_SESSION['membre']['courriel']; } ?>">
 									</label>
 									<input type="submit" name="bouton-courriel" value="Changer">
 
@@ -91,11 +90,11 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
                 <legend>Informations personnelles</legend>
                 <div id="adresse-livraison">
                     <label for="prenom">
-                        Prénom <input type="text" id="prenom" name="prenom">
+                        Prénom <input type="text" id="prenom" name="prenom" value="<?php if(isset($_SESSION['membre']['prenom'])) { echo $_SESSION['membre']['prenom']; } ?>">
                     </label>
 
                     <label for="nom">
-                        Nom <input type="text" id="nom" name="nom">
+                        Nom <input type="text" id="nom" name="nom" value="<?php if(isset($_SESSION['membre']['nom'])) { echo $_SESSION['membre']['nom']; } ?>">
 					</label>
 
                     <label for="numero-rue">
