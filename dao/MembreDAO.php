@@ -86,7 +86,19 @@ class MembreDAO{
         // return $membre;
     }
 
-    public static function modifierProfil($id)
+    public static function modifierProfilNomUtilisateur($id,$nouveauNomUtilisateur)
+    {
+      $MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR = "UPDATE membre SET nom_utilisateur = :nouveauNom WHERE id = :id";
+      $requeteModifierNomUtilisateur = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR);
+      $requeteModifierNomUtilisateur->bindParam(':nouveauNom', $nouveauNomUtilisateur, PDO::PARAM_STR);
+      $requeteModifierNomUtilisateur->execute();
+
+      $req = pg_get_result($requeteModifierNomUtilisateur);
+      echo pg_result_error($req);
+      return false;
+    }
+/*
+    public static function modifierProfilC($id)
     {
       $MESSAGE_SQL_MODIFIER_PROFIL = "UPDATE membre SET * WHERE id = :id";
       $requeteModifierProfil = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_PROFIL);
@@ -100,5 +112,5 @@ class MembreDAO{
       $req = pg_get_result($requeteModifierProfil);
       echo pg_result_error($req);
       return false;
-    }
+    }*/
 }
