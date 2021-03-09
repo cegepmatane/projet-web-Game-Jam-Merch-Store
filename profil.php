@@ -16,6 +16,9 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 		$id=$_SESSION['membre']['id'];
 		$nouveauNomUtilisateur=$_REQUEST['nom-utilisateur'];
 		$NU = MembreDAO::modifierProfilNomUtilisateur($id, $nouveauNomUtilisateur);
+
+		$_SESSION['membre']['nom_utilisateur'] =  $nouveauNomUtilisateur;
+
 	}
 	if (isset($_POST['bouton-courriel']))
 	{
@@ -61,7 +64,7 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 									<label for="nom-utilisateur"> 
 						Nom d'utilisateur<input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
 									</label>
-									
+
 									<input type="submit" name="bouton-nom-utilisateur" value="Changer">
 
 												</form>
