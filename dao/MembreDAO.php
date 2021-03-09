@@ -41,7 +41,7 @@ class MembreDAO{
 
         $requeteMail = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MAIL);
         $requeteMail->bindParam(':mail', $mail, PDO::PARAM_STR);
-        
+
         $requeteMail->execute();
         $membre = $requeteMail->fetch();
 
@@ -84,5 +84,21 @@ class MembreDAO{
         // $membre = $requeteUpdate;
 
         // return $membre;
+    }
+
+    public static function modifierProfil($id)
+    {
+      $MESSAGE_SQL_MODIFIER_PROFIL = "UPDATE membre SET * WHERE id = :id";
+      $requeteModifierProfil = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_PROFIL);
+      $requeteModifierProfil->bindParam(':nom_utilisateur', $nouveauNomUtilisateur, PDO::PARAM_STR);
+      $requeteModifierProfil->bindParam(':prenom', $nouveaPrenom, PDO::PARAM_STR);
+      $requeteModifierProfil->bindParam(':nom', $nouveauNom, PDO::PARAM_STR);
+      $requeteModifierProfil->bindParam(':courriel', $nouveauCourriel, PDO::PARAM_STR);
+      $requeteModifierProfil->bindParam(':ancien_nom_utilisateur', $ancienNomUtilisateur, PDO::PARAM_STR);
+      $requeteModifierProfil->execute();
+
+      $req = pg_get_result($requeteModifierProfil);
+      echo pg_result_error($req);
+      return false;
     }
 }
