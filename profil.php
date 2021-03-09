@@ -132,7 +132,5 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
     </section>
 </body>
 </html>
-<?php
-}
-require_once CHEMIN_INCLUDE."pied-page.php";
+<?php}require_once CHEMIN_INCLUDE."pied-page.php";
 ?>
