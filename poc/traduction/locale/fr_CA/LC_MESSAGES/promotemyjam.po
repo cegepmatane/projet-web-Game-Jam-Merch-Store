@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-09 22:05-0500\n"
+"PO-Revision-Date: 2021-03-09 22:06-0500\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: index.php:16
+msgid "Page Inscription"
+msgstr ""
+
+#: index.php:26
+msgid "Prénom"
+msgstr ""
+
+#: index.php:29
+msgid "Nom"
+msgstr ""
+
+#: index.php:32
+msgid "Nom d'utilisateur"
+msgstr ""
+
+#: index.php:35
+msgid "Adresse courriel"
+msgstr ""
+
+#: index.php:38
+msgid "Mot de passe"
+msgstr ""
+
+#: index.php:41
+msgid "Confirmer votre mot de passe"
+msgstr ""
