@@ -5,6 +5,8 @@ require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 
 $listeItem = PromotemyjamDAO::listerItems();
 
+<script src="recherche.js" defer></script>
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +45,7 @@ $listeItem = PromotemyjamDAO::listerItems();
         </div>
         <hr>
 
+        <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher un produit"/>
 
         <div class="content">
             <?php
