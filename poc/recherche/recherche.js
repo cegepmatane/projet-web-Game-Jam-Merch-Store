@@ -1,6 +1,6 @@
 (function() {
   var httpRequest;
-  document.getElementById("barre-de-recherche").addEventListener('keyup', makeRequest);
+  document.getElementById("barre-de-recherche").addEventListener('onkeyup', makeRequest);
   var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
 
 
