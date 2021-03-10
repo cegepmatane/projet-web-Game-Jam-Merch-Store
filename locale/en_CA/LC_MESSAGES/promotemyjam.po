@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-10 15:21-0500\n"
-"PO-Revision-Date: 2021-03-10 16:28-0500\n"
+"PO-Revision-Date: 2021-03-10 17:02-0500\n"
 "Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -196,7 +196,7 @@ msgstr "Postal code"
 
 #: profil.php:144
 msgid "Pays"
-msgstr "Counrty"
+msgstr "Country"
 
 #: profil.php:148
 msgid "Enregistrer"
