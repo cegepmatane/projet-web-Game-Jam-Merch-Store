@@ -1,5 +1,6 @@
 <?php
 include "include/configuration.php";
+include CHEMIN_INCLUDE."traduction.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 
 if(isset($_POST['action-authentification'])){
@@ -52,6 +53,9 @@ if(isset($_POST['action-authentification'])){
     <div id="btnr">
         <a class="bouton-retour" href="index.php"><img src="img/retour.png"></a>
     </div>
+
+    <form class="traduction-form" method="post"><input class="traduction-input" type="submit" name="langue" value=<?=_("English")?>></form>
+
      <!--MAIN-->
      <section class="contenu-page">
             <?php

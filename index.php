@@ -1,6 +1,6 @@
 <?php
 include 'include/configuration.php';
-
+include CHEMIN_INCLUDE."traduction.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 
 $listeItem = PromotemyjamDAO::listerItems();
@@ -16,6 +16,8 @@ $listeItem = PromotemyjamDAO::listerItems();
     <body>
 	<div class="barre-navigation">
         <a class="navigation-admin" href="admin/liste-admin.php"><?=_("Panneau d'administration")?></a>
+
+        <form class="traduction-form" method="post"><input class="traduction-input" type="submit" name="langue" value=<?=_("English")?>></form>
 
         <?php if(isset($_SESSION['membre']['id'])){ ?>
             <a class="navigation-utilisateur" href="deconnexion.php"><?=_("Se déconnecter")?></a>

@@ -1,6 +1,7 @@
 <?php
 
 include "include/configuration.php";
+include CHEMIN_INCLUDE."traduction.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
 /*
 $_SESSION['membre']['id'] = $user['id'];
@@ -69,6 +70,8 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
     <div id="btnr">
         <a class="bouton-retour" href="index.php"><img src="img/retour.png"></a>
     </div>
+
+	<form class="traduction-form" method="post"><input class="traduction-input" type="submit" name="langue" value=<?=_("English")?>></form>
 
      <!--MAIN-->
     <section class="contenu-page">
