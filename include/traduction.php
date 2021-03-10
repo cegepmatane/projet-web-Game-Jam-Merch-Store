@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['langue'])){
-    if ($_POST['langue'] == "Français"){
+    if ($_POST['langue'] == "Francais"){
         $_SESSION['langue'] = "fr_CA";
     }
     if ($_POST['langue'] == "English"){
@@ -18,6 +18,6 @@ $domaine = "promotemyjam";
 
 setlocale(LC_ALL,$locale);
 
-bindtextdomain($domaine,"locale");
+bindtextdomain($domaine,"/var/www/www.promotemyjam.store/locale");
 textdomain($domaine);
 ?>
