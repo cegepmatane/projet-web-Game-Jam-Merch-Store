@@ -11,6 +11,7 @@ function makeRequest() {
     return false;
   }
   console.log("1");
+  reponse=httpRequest.responseText;
   httpRequest.onreadystatechange = listeItem;
   httpRequest.open('GET', url, true);
   httpRequest.send();
@@ -24,8 +25,8 @@ function listeItem(){
       alert('Il y a eu un problème avec la requête.');
     }
     console.log("1");
-    for (var i = 0; i < document.getElementByTagName('nom').length; i++) {
-    document.getElementByTagName('nom').values('nom');
+    for (var i = 0; i < reponse.getElementByTagName('nom').length; i++) {
+    reponse.getElementByTagName('nom').values('nom');
     console.log("2");
   }
   }
