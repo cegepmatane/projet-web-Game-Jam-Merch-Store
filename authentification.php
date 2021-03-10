@@ -27,16 +27,16 @@ if(isset($_POST['action-authentification'])){
     
                     header("Location: index.php"); //redirection sur la page de notre choix
                 } else {
-                    $erreur = "Vosu devez confirmer votre inscription avant de vous connecter.";
+                    $erreur = _("Vous devez confirmer votre inscription avant de vous connecter.");
                 }
             } else {
-                $erreur = "Votre mot de passe est incorrect !";
+                $erreur = _("Votre mot de passe est incorrect !");
             }
         } else {
-            $erreur = "L'utilisateur semble etre inexistant !";
+            $erreur = _("L'utilisateur semble etre inexistant !");
         }
     } else {
-        $erreur = "Tous les champs doivent etre completes !";
+        $erreur = _("Tous les champs doivent etre completes !");
     }
 }
 ?>
@@ -46,7 +46,7 @@ if(isset($_POST['action-authentification'])){
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page authentification</title>
+    <title><?=_("Page authentification")?></title>
 </head>
 <body>
     <div id="btnr">
@@ -62,14 +62,14 @@ if(isset($_POST['action-authentification'])){
             ?>
             <form method="post" id="formulaire-authentification" action="authentification.php">
                 <div id="bloc-authentification">
-                    <label for="courriel">Adresse courriel</label>
+                    <label for="courriel"><?=_("Adresse courriel")?></label>
                     <input type="email" id="courriel" name="courriel">
 
-                    <label for="mot_de_passe">Mot de passe</label>
+                    <label for="mot_de_passe"><?=_("Mot de passe")?></label>
                     <input type="password" id="mot_de_passe" name="mot_de_passe">    
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="Se connecter" name="action-authentification">
+                    <input type="submit" value=<?=_("Se connecter")?> name="action-authentification">
                 </div>
             </form>
         </section>

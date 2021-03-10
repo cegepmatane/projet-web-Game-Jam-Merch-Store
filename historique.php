@@ -18,7 +18,7 @@ require_once CHEMIN_INCLUDE."entete.php";
     <!--HEADER-->
     <header>
         <div>
-            <h1>Paiement</h1>
+            <h1><?=_("Paiement")?></h1>
         </div>
     </header>
     <div id="btnr">
@@ -28,7 +28,7 @@ require_once CHEMIN_INCLUDE."entete.php";
     <!--MAIN-->
     <section class="contenu-page">
         <fieldset id="historique">
-            <legend>Historique des commandes</legend>
+            <legend><?=_("Historique des commandes")?></legend>
             <a href="#">
                 <div class="commande">
                     <img src="img/test.png" width="100" height="100">

@@ -15,7 +15,7 @@ $item = PromotemyjamDAO::lireItem($id);
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Page Item</title>
+    <title><?=_("Page Item")?></title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@ $item = PromotemyjamDAO::lireItem($id);
 	<a class="bouton-retour" href="index.php"><img src="img/retour.png"></a>
     </div>
     <section class="section-item">
-        <a href="index.php">Retour</a>
+        <a href="index.php"><?=_("Retour")?></a>
 
         <div class="item">
             <img src="img/<?php echo $item['image']; ?>" width="250" height="250" alt="Item">
@@ -38,11 +38,11 @@ $item = PromotemyjamDAO::lireItem($id);
 				<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="<?php echo $item['id_button']; ?>">
-					<input type="image" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-					<img alt="" border="0" src="https://www.paypalobjects.com/fr_CA/i/scr/pixel.gif" width="1" height="1">
+					<input type="image" src=<?=_("https://www.paypalobjects.com/fr_CA/i/btn/btn_cart_LG.gif")?> border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+					<img alt="" border="0" src=<?=_("https://www.paypalobjects.com/fr_CA/i/scr/pixel.gif")?> width="1" height="1">
 				</form>
 			<?php } else { ?>
-				<p>Actuellement indisponible</p>
+				<p><?=_("Actuellement indisponible")?></p>
 			<?php } ?>
         </div>
     </section>

@@ -63,22 +63,22 @@ L'equipe Promote My Jam";
                                 header('location: index.php');
                             }
                         } else {
-                            $erreur = "Les mots de passe doivent correspondre !";
+                            $erreur = _("Les mots de passe doivent correspondre !");
                         }
                     } else {
-                        $erreur = "Votre courriel n'est pas valide";
+                        $erreur = _("Votre courriel n'est pas valide");
                     }
                 } else {
-                    $erreur = "Votre nom d'utilisateur ne doit pas dépasser 255 caractères !";
+                    $erreur = _("Votre nom d'utilisateur ne doit pas dépasser 255 caractères !");
                 }
             } else {
-                $erreur = "Votre nom ne doit pas dépasser 255 caractères !";
+                $erreur = _("Votre nom ne doit pas dépasser 255 caractères !");
             }
         } else {
-            $erreur = "Votre prénom ne doit pas dépasser 255 caractères !";
+            $erreur = _("Votre prénom ne doit pas dépasser 255 caractères !");
         }
     } else {
-        $erreur = "Tous les champs doivent être complétés ! ";
+        $erreur = _("Tous les champs doivent être complétés !");
     }
 }
 ?>
@@ -88,7 +88,7 @@ L'equipe Promote My Jam";
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/style.css"/>
-    <title>Page Inscription</title>
+    <title><?=_("Page Inscription")?></title>
 </head>
 <body>
     <div id="btnr">
@@ -104,26 +104,26 @@ L'equipe Promote My Jam";
             ?>
             <form method="post" id="formulaire-authentification" action="inscription.php">
                 <div id="bloc-authentification">
-                    <label for="prenom">Prénom</label>
+                    <label for="prenom"><?=_("Prénom")?></label>
                     <input type="text" id="prenom" name="prenom">
                     
-                    <label for="nom">Nom</label>
+                    <label for="nom"><?=_("Nom")?></label>
                     <input type="text" id="nom" name="nom">
 
-                    <label for="nom_utilisateur">Nom d'utilisateur</label>
+                    <label for="nom_utilisateur"><?=_("Nom d'utilisateur")?></label>
                     <input type="text" id="nom_utilisateur" name="nom_utilisateur">
 
-                    <label for="courriel">Adresse courriel</label>
+                    <label for="courriel"><?=_("Adresse courriel")?></label>
                     <input type="email" id="courriel" name="courriel">
 
-                    <label for="mot_de_passe">Mot de passe</label>
+                    <label for="mot_de_passe"><?=_("Mot de passe")?></label>
                     <input type="password" id="mot_de_passe" name="mot_de_passe">
 
-                    <label for="mot_de_passe_confirmation">Confirmer votre mot de passe</label>
+                    <label for="mot_de_passe_confirmation"><?=_("Confirmer votre mot de passe")?></label>
                     <input type="password" id="mot_de_passe_confirmation" name="mot_de_passe_confirmation">
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="S'inscrire" name="action-inscription">
+                    <input type="submit" value=<?=_("S'inscrire")?> name="action-inscription">
                 </div>
             </form>
             
