@@ -12,21 +12,10 @@
       alert('Abandon :( Impossible de créer une instance de XMLHTTP');
       return false;
     }
-    httpRequest.onreadystatechange = alertContents;
+    echo("1");
     httpRequest.onreadystatechange = listeItem;
     httpRequest.open('GET', url, true);
     httpRequest.send();
-  }
-
-  function alertContents() {
-    if (httpRequest.readyState === XMLHttpRequest.DONE) {
-      if (httpRequest.status === 200) {
-        var response = JSON.parse(httpRequest.responseText);
-        alert(httpRequest.responseText);
-      } else {
-        alert('Il y a eu un problème avec la requête.');
-      }
-    }
   }
 
   function listeItem(){
