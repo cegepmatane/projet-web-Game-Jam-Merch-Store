@@ -1,13 +1,16 @@
 (function() {
   var httpRequest;
+  echo("2");
   document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
   var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
 
+  echo("2");
 
 
   function makeRequest() {
     httpRequest = new XMLHttpRequest();
 
+    echo("2");
     if (!httpRequest) {
       alert('Abandon :( Impossible de créer une instance de XMLHTTP');
       return false;
