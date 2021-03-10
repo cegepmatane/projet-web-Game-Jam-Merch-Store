@@ -2,13 +2,55 @@
 
 include "include/configuration.php";
 require CHEMIN_ACCESSEUR."MembreDAO.php";
+/*
+$_SESSION['membre']['id'] = $user['id'];
+$_SESSION['membre']['prenom'] = $user['prenom'];
+$_SESSION['membre']['nom_utilisateur'] = $user['nom_utilisateur'];
+$_SESSION['membre']['nom'] = $user['nom'];
+$_SESSION['membre']['courriel'] = $user['courriel'];
+$_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
+*/
 
-	if (isset($_GET['action_edition_profil']))
+	if (isset($_POST['bouton-nom-utilisateur']))
 	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauNomUtilisateur=$_REQUEST['nom-utilisateur'];
+		$NU = MembreDAO::modifierProfilNomUtilisateur($id, $nouveauNomUtilisateur);
 
-$result = mysql_query("SELECT * FROM utilisateur WHERE cin = $cin ");
-while($affiche_commentaire = mysql_fetch_array($result)){
-?>
+		$_SESSION['membre']['nom_utilisateur'] =  $nouveauNomUtilisateur;
+
+	}
+
+	if (isset($_POST['bouton-courriel']))
+	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauCourriel=$_REQUEST['courriel'];
+		$Courriel = MembreDAO::modifierProfilCourriel($id, $nouveauCourriel);
+
+		$_SESSION['membre']['courriel'] =  $nouveauCourriel;
+	}
+
+	if (isset($_POST['bouton-mdp']))
+	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauMotDePasse=$_REQUEST['mdp'];
+		$MotDePasse = MembreDAO::modifierProfilMotDePasse($id, $nouveauMotDePasse);
+
+		$_SESSION['membre']['mdp'] =  $nouveauMotDePasse;
+	}
+
+	if (isset($_POST['action-enregistrer-adresse']))
+	{
+		$id=$_SESSION['membre']['id'];
+		$nouveauPrenom=$_REQUEST['prenom'];
+		$nouveauNom=$_REQUEST['nom'];
+		$Infos = MembreDAO::modifierProfilInfosPersonnelles($id, $nouveauPrenom, $nouveauNom);
+
+		$_SESSION['membre']['prenom'] =  $nouveauPrenom;
+		$_SESSION['membre']['nom'] =  $nouveauNom;
+	}
+
+	?>
 
 <!DOCTYPE html>
 <html>
@@ -33,54 +75,46 @@ while($affiche_commentaire = mysql_fetch_array($result)){
         <div id="tete-profil">
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
-			<form action="profil.php?id=<?php echo $id;?>" method="post">
-   nom:
-
-" type="text" />
+			<form action="" method="post">
 
 
-   prenom:
+									<label for="nom-utilisateur"> 
+						Nom d'utilisateur<input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
+									</label>
 
-" type="text" />
+									<input type="submit" name="bouton-nom-utilisateur" value="Changer">
+
+												</form>
+
+									<form action="" method="post">
+									<label for="courriel">
+											Courriel <input type="email" id="courriel" name="courriel" value="<?php if(isset($_SESSION['membre']['courriel'])) { echo $_SESSION['membre']['courriel']; } ?>">
+									</label>
+									<input type="submit" name="bouton-courriel" value="Changer">
+
+												</form>
+									<form action="" method="post">
+									<label for="mdp">
+										 Mot de passe <input type="password" id="mdp" name="mdp">
+									</label>
+
+									<input type="submit" name="bouton-mdp" value="Changer">
+												</form>
+							</div>
+					</div>
 
 
-
-</form>
-                <label for="nom-utilisateur">
-                <?php
-				if(isset($nom)){?>
-				<div><?= $nom ?></div>
-                <?php   
-                }
-            ?>
-            <input type="text" placeholder="Votre nom" name="nom" value="<?php if(isset($nom)){ echo $nom; }else{ echo $afficher_profil['nom'];}?>" required>   
-           
-					<input type="text" placeholder="Votre nom d'utilisateur id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($prenom)){ echo $nom_utilisateur; }else{ echo $afficher_profil['nom_utilisateur'];}?>" required>
-
-                </label>
-                <input type="button" value="Changer">
-
-                <label for="courriel">
-                    Courriel <input type="email" id="courriel" name="courriel">
-                </label>
-                <input type="button" value="Changer">
-
-                <label for="mdp">
-                   Mot de passe <input type="password" id="mdp" name="mdp">
-				</label>
-                <input type="button" value="Changer">
-            </div>
-        </div>
+			</form>
         <form method="post" class="formulaire-profil" action="profil.php">
             <fieldset>
                 <legend>Informations personnelles</legend>
                 <div id="adresse-livraison">
                     <label for="prenom">
-                        Prénom <input type="text" id="prenom" name="prenom">
+                        Prénom <input type="text" id="prenom" name="prenom" value="<?php if(isset($_SESSION['membre']['prenom'])) { echo $_SESSION['membre']['prenom']; } ?>">
                     </label>
 
                     <label for="nom">
-                        Nom <input type="text" id="nom" name="nom">
+                        Nom <input type="text" id="nom" name="nom" value="<?php if(isset($_SESSION['membre']['nom'])) { echo $_SESSION['membre']['nom']; } ?>">
 					</label>
 
                     <label for="numero-rue">
@@ -116,7 +150,5 @@ while($affiche_commentaire = mysql_fetch_array($result)){
     </section>
 </body>
 </html>
-<?php
-}
-require_once CHEMIN_INCLUDE."pied-page.php";
+<?php}require_once CHEMIN_INCLUDE."pied-page.php";
 ?>

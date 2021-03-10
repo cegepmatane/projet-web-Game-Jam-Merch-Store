@@ -41,7 +41,7 @@ class MembreDAO{
 
         $requeteMail = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MAIL);
         $requeteMail->bindParam(':mail', $mail, PDO::PARAM_STR);
-        
+
         $requeteMail->execute();
         $membre = $requeteMail->fetch();
 
@@ -84,5 +84,58 @@ class MembreDAO{
         // $membre = $requeteUpdate;
 
         // return $membre;
+    }
+
+    public static function modifierProfilNomUtilisateur($id,$nouveauNomUtilisateur)
+    {
+      $MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR = "UPDATE membre SET nom_utilisateur = :nouveauNom WHERE id = :id";
+      $requeteModifierNomUtilisateur = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_NOM_UTILISATEUR);
+      $requeteModifierNomUtilisateur->bindParam(':id', $id, PDO::PARAM_INT);
+      $requeteModifierNomUtilisateur->bindParam(':nouveauNom', $nouveauNomUtilisateur, PDO::PARAM_STR);
+      $requeteModifierNomUtilisateur->execute();
+
+      $req = pg_get_result($requeteModifierNomUtilisateur);
+      echo pg_result_error($req);
+      return false;
+    }
+
+    public static function modifierProfilCourriel($id,$nouveauCourriel)
+    {
+      $MESSAGE_SQL_MODIFIER_COURRIEL = "UPDATE membre SET courriel = :nouveauCourriel WHERE id = :id";
+      $requeteModifierCourriel = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_COURRIEL);
+      $requeteModifierCourriel->bindParam(':id', $id, PDO::PARAM_INT);
+      $requeteModifierCourriel->bindParam(':nouveauCourriel', $nouveauCourriel, PDO::PARAM_STR);
+      $requeteModifierCourriel->execute();
+
+      $req = pg_get_result($requeteModifierCourriel);
+      echo pg_result_error($req);
+      return false;
+    }
+
+    public static function modifierProfilMotDePasse($id,$nouveauMotDePasse)
+    {
+      $MESSAGE_SQL_MODIFIER_MOT_DE_PASSE = "UPDATE membre SET mot_de_passe = :nouveauMotDePasse WHERE id = :id";
+      $requeteModifierMotDePasse = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_MOT_DE_PASSE);
+      $requeteModifierMotDePasse->bindParam(':id', $id, PDO::PARAM_INT);
+      $requeteModifierMotDePasse->bindParam(':nouveauMotDePasse', $nouveauMotDePasse, PDO::PARAM_STR);
+      $requeteModifierMotDePasse->execute();
+
+      $req = pg_get_result($requeteModifierMotDePasse);
+      echo pg_result_error($req);
+      return false;
+    }
+
+    public static function modifierProfilInfosPersonnelles($id,$nouveauPrenom,$nouveauNom)
+    {
+      $MESSAGE_SQL_MODIFIER_INFORMATIONS_PERSONNELLES = "UPDATE membre SET prenom = :nouveauPrenom, nom = :nouveauNom WHERE id = :id";
+      $requeteModifierInfosPersonnelles = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_MODIFIER_INFORMATIONS_PERSONNELLES);
+      $requeteModifierInfosPersonnelles->bindParam(':id', $id, PDO::PARAM_INT);
+      $requeteModifierInfosPersonnelles->bindParam(':nouveauPrenom', $nouveauPrenom, PDO::PARAM_STR);
+      $requeteModifierInfosPersonnelles->bindParam(':nouveauNom', $nouveauNom, PDO::PARAM_STR);
+      $requeteModifierInfosPersonnelles->execute();
+
+      $req = pg_get_result($requeteModifierInfosPersonnelles);
+      echo pg_result_error($req);
+      return false;
     }
 }
