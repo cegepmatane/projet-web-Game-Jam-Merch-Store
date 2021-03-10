@@ -43,11 +43,6 @@ $listeItem = PromotemyjamDAO::listerItems();
         </div>
         <hr>
 
-        <input type="textarea" id="recherche">
-        <script>
-        (function(){
-
-        })
 
         <div class="content">
             <?php
