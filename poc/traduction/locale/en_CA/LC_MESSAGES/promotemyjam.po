@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-09 22:05-0500\n"
-"PO-Revision-Date: 2021-03-09 22:08-0500\n"
-"Language: en_CA\n"
+"POT-Creation-Date: 2021-03-09 23:08-0500\n"
+"PO-Revision-Date: 2021-03-09 23:14-0500\n"
+"Language: fr_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,30 +17,34 @@ msgstr ""
 "Language-Team: \n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: index.php:16
+#: index.php:30
 msgid "Page Inscription"
 msgstr "Signup Page"
 
-#: index.php:26
+#: index.php:48
 msgid "Prénom"
 msgstr "First name"
 
-#: index.php:29
+#: index.php:51
 msgid "Nom"
-msgstr "Last name"
+msgstr "Last anme"
 
-#: index.php:32
+#: index.php:54
 msgid "Nom d'utilisateur"
 msgstr "Username"
 
-#: index.php:35
+#: index.php:57
 msgid "Adresse courriel"
 msgstr "Email"
 
-#: index.php:38
+#: index.php:60
 msgid "Mot de passe"
 msgstr "Password"
 
-#: index.php:41
+#: index.php:63
 msgid "Confirmer votre mot de passe"
 msgstr "Confirm your password"
+
+#: index.php:67
+msgid "S'inscrire"
+msgstr "Sign up"

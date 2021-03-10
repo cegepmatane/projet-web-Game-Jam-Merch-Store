@@ -30,16 +30,14 @@ textdomain($domaine);
     <title><?=_("Page Inscription")?></title>
 </head>
 <body>
+    <form method="post">
     <?php if($locale == "en_CA"){ ?>
-    <form method="post">
-    <input type="submit" name="langue" value="Français">
-    </form>
+        <input type="submit" name="langue" value="Français">
     <?php } if($locale == "fr_CA"){ ?>
-    <form method="post">
-    <input type="submit" name="langue" value="English">
-    </form>
+        <input type="submit" name="langue" value="English">
     <?php } ?>
-      
+    </form>
+
     <div id="btnr">
         <a class="bouton-retour" href="index.php"><img src="img/retour.png"></a>
     </div>
@@ -66,7 +64,7 @@ textdomain($domaine);
                     <input type="password" id="mot_de_passe_confirmation" name="mot_de_passe_confirmation">
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="S'inscrire" name="action-inscription">
+                    <input type="submit" value=<?=_("S'inscrire")?> name="action-inscription">
                 </div>
             </form>
             
