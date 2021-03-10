@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-10 15:21-0500\n"
+"PO-Revision-Date: 2021-03-10 15:35-0500\n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: authentification.php:31
+msgid "Vous devez confirmer votre inscription avant de vous connecter."
+msgstr ""
+
+#: authentification.php:34
+msgid "Votre mot de passe est incorrect !"
+msgstr ""
+
+#: authentification.php:37
+msgid "L'utilisateur semble etre inexistant !"
+msgstr ""
+
+#: authentification.php:40
+msgid "Tous les champs doivent etre completes !"
+msgstr ""
+
+#: authentification.php:50
+msgid "Page authentification"
+msgstr ""
+
+#: authentification.php:57 historique.php:28 index.php:20 inscription.php:99
+#: item.php:26 profil.php:74
+msgid "English"
+msgstr ""
+
+#: authentification.php:69 inscription.php:120
+msgid "Adresse courriel"
+msgstr ""
+
+#: authentification.php:72 inscription.php:123 profil.php:101
+msgid "Mot de passe"
+msgstr ""
+
+#: authentification.php:76
+msgid "Connection"
+msgstr ""
+
+#: historique.php:21
+msgid "Paiement"
+msgstr ""
+
+#: historique.php:33 index.php:32
+msgid "Historique des commandes"
+msgstr ""
+
+#: index.php:18
+msgid "Panneau d'administration"
+msgstr ""
+
+#: index.php:23
+msgid "Se déconnecter"
+msgstr ""
+
+#: index.php:24
+msgid "Espace membre"
+msgstr ""
+
+#: index.php:29
+msgid "https://www.paypalobjects.com/fr_CA/i/btn/btn_viewcart_LG.gif"
+msgstr ""
+
+#: index.php:30 item.php:45
+msgid "https://www.paypalobjects.com/fr_CA/i/scr/pixel.gif"
+msgstr ""
+
+#: index.php:36
+msgid "Créer un compte"
+msgstr ""
+
+#: index.php:37
+msgid "S'authentifier"
+msgstr ""
+
+#: inscription.php:67
+msgid "Les mots de passe doivent correspondre !"
+msgstr ""
+
+#: inscription.php:70
+msgid "Votre courriel n'est pas valide"
+msgstr ""
+
+#: inscription.php:73
+msgid "Votre nom d'utilisateur ne doit pas dépasser 255 caractères !"
+msgstr ""
+
+#: inscription.php:76
+msgid "Votre nom ne doit pas dépasser 255 caractères !"
+msgstr ""
+
+#: inscription.php:79
+msgid "Votre prénom ne doit pas dépasser 255 caractères !"
+msgstr ""
+
+#: inscription.php:82
+msgid "Tous les champs doivent être complétés !"
+msgstr ""
+
+#: inscription.php:92
+msgid "Page Inscription"
+msgstr ""
+
+#: inscription.php:111 profil.php:116
+msgid "Prénom"
+msgstr ""
+
+#: inscription.php:114 profil.php:120
+msgid "Nom"
+msgstr ""
+
+#: inscription.php:117 profil.php:85
+msgid "Nom d'utilisateur"
+msgstr ""
+
+#: inscription.php:126
+msgid "Confirmer votre mot de passe"
+msgstr ""
+
+#: inscription.php:130
+msgid "S'inscrire"
+msgstr ""
+
+#: item.php:18
+msgid "Page Item"
+msgstr ""
+
+#: item.php:29
+msgid "Retour"
+msgstr ""
+
+#: item.php:44
+msgid "https://www.paypalobjects.com/fr_CA/i/btn/btn_cart_LG.gif"
+msgstr ""
+
+#: item.php:48
+msgid "Actuellement indisponible"
+msgstr ""
+
+#: profil.php:61
+msgid "Page Profil"
+msgstr ""
+
+#: profil.php:67
+msgid "Profil"
+msgstr ""
+
+#: profil.php:88 profil.php:96 profil.php:104
+msgid "Changer"
+msgstr ""
+
+#: profil.php:94
+msgid "Courriel"
+msgstr ""
+
+#: profil.php:113
+msgid "Informations personnelles"
+msgstr ""
+
+#: profil.php:124
+msgid "Num. rue"
+msgstr ""
+
+#: profil.php:128
+msgid "Appt/Chambre"
+msgstr ""
+
+#: profil.php:132
+msgid "Rue"
+msgstr ""
+
+#: profil.php:136
+msgid "Ville"
+msgstr ""
+
+#: profil.php:140
+msgid "Code postal"
+msgstr ""
+
+#: profil.php:144
+msgid "Pays"
+msgstr ""
+
+#: profil.php:148
+msgid "Enregistrer"
+msgstr ""

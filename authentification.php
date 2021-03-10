@@ -73,7 +73,7 @@ if(isset($_POST['action-authentification'])){
                     <input type="password" id="mot_de_passe" name="mot_de_passe">    
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value=<?=_("Se connecter")?> name="action-authentification">
+                    <input type="submit" value=<?=_("Connection")?> name="action-authentification">
                 </div>
             </form>
         </section>
