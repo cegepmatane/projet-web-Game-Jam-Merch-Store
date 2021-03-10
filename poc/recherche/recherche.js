@@ -1,5 +1,4 @@
-(function() {
-  var httpRequest;
+var httpRequest;
   echo("2");
   document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
   var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
@@ -40,4 +39,3 @@
   function afficherItemRechercher(){
 
   }
-});
