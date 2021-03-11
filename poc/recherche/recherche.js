@@ -24,9 +24,8 @@ function listeItem(){
       alert('Il y a eu un problème avec la requête.');
     }
     console.log("1");
-    var reponse = httpRequest.responseXML;
-    for (var i = 0; i < reponse.getElementByTagName('nom').length; i++) {
-    reponse.getElementByTagName('nom').values('nom');
+    for (var i = 0; i < document.getElementByTagName('nom').length; i++) {
+    document.getElementByTagName('nom').values('nom');
     console.log("2");
   }
   }
