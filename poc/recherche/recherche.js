@@ -12,7 +12,8 @@ function makeRequest(url, nom) {
   }
   console.log("1");
   httpRequest.onreadystatechange = listeItem;
-  httpRequest.open('GET', url, nom);
+  httpRequest.open('GET', url, true);
+  httpRequest.filepath = url;
   httpRequest.send();
 }
 
