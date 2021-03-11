@@ -11,13 +11,13 @@ function makeRequest() {
     return false;
   }
   console.log("1");
-  var reponse = httpRequest.responseXML;
   httpRequest.onreadystatechange = listeItem;
   httpRequest.open('GET', url, true);
   httpRequest.send();
 }
 
 function listeItem(){
+var reponse = httpRequest.responseXML;
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
