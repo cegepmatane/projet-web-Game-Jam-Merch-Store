@@ -11,7 +11,7 @@ function makeRequest() {
     return false;
   }
   console.log("1");
-  var reponse = httpRequest.responseText;
+  var reponse = httpRequest.responseXML;
   httpRequest.onreadystatechange = listeItem;
   httpRequest.open('GET', url, true);
   httpRequest.send();
