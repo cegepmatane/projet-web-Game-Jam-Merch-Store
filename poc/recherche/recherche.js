@@ -17,7 +17,6 @@ function makeRequest() {
 }
 
 function listeItem(){
-var reponse = httpRequest.responseXML;
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
@@ -25,6 +24,7 @@ var reponse = httpRequest.responseXML;
       alert('Il y a eu un problème avec la requête.');
     }
     console.log("1");
+    var reponse = httpRequest.responseXML;
     for (var i = 0; i < reponse.getElementByTagName('nom').length; i++) {
     reponse.getElementByTagName('nom').values('nom');
     console.log("2");
