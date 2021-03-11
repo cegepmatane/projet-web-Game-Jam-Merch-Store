@@ -3,7 +3,7 @@ var httpRequest;
 document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
 var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
 
-function makeRequest() {
+function makeRequest(url, nom) {
   httpRequest = new XMLHttpRequest();
 
   if (!httpRequest) {
