@@ -34,6 +34,20 @@ class MembreDAO{
 
         return $membre;
     }
+    
+    public static function verifierExistant($valeurChamp)
+    {
+        $MESSAGE_SQL_EXISTANT = "SELECT * FROM membre 
+                            WHERE courriel=:valeur 
+                            OR nom_utilisateur=:valeur";
+
+        $requete = BaseDeDonnees::getConnexion()->prepare($MESSAGE_SQL_EXISTANT);
+        $requete->bindParam(':valeur', $valeurChamp, PDO::PARAM_STR);
+        $requete->execute();
+        $membre = $requete->fetch();
+
+        return $membre;
+    }
 
     public static function lireMail($mail)
     {
