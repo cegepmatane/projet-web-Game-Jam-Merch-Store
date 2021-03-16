@@ -118,4 +118,14 @@ class PromotemyjamDAO{
         return $reussiteSuppression;
     }
 
+    public static function randomItem()
+    {
+        $REQUETE_RANDOM_ITEM = "SELECT * FROM item ORDER BY RAND() LIMIT 1";
+
+        $requete = BaseDeDonnees::getConnexion()->prepare($REQUETE_RANDOM_ITEM);
+        $requete->execute();
+        $item = $requete->fetch();
+        return $item;
+    }
+
 }

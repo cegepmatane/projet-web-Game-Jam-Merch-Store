@@ -4,6 +4,7 @@ include CHEMIN_INCLUDE."traduction.php";
 require_once CHEMIN_ACCESSEUR."PromotemyjamDAO.php";
 
 $listeItem = PromotemyjamDAO::listerItems();
+$randomitem = PromotemyjamDAO::randomItem();
 
 ?>
 
@@ -59,6 +60,12 @@ $listeItem = PromotemyjamDAO::listerItems();
             <?php
             }
             ?>
+
+            <div>
+                <a href="item.php?id=<?php echo $randomitem['id']; ?>"><img src='.img/rand.png'></a>
+                <p>Un nom magnifique</p>
+                <span>Pour un prix ahurissant</span>
+            </div>
         </div>
     </body>
 </html>
