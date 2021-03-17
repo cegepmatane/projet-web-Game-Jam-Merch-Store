@@ -90,6 +90,7 @@ L'equipe Promote My Jam";
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="css/style.css"/>
     <title><?=_("Page Inscription")?></title>
+    <script defer src="ajax-inscription.js"></script>
 </head>
 <body>
     <div id="btnr">
@@ -115,19 +116,21 @@ L'equipe Promote My Jam";
                     <input type="text" id="nom" name="nom">
 
                     <label for="nom_utilisateur"><?=_("Nom d'utilisateur")?></label>
-                    <input type="text" id="nom_utilisateur" name="nom_utilisateur">
+                    <input type="text" id="nom_utilisateur" class="ajax-inscription" name="nom_utilisateur">
 
                     <label for="courriel"><?=_("Adresse courriel")?></label>
-                    <input type="email" id="courriel" name="courriel">
+                    <input type="email" id="courriel" class="ajax-inscription" name="courriel">
 
                     <label for="mot_de_passe"><?=_("Mot de passe")?></label>
-                    <input type="password" id="mot_de_passe" name="mot_de_passe">
+                    <input type="password" id="mot_de_passe" class="ajax-inscription" name="mot_de_passe">
 
                     <label for="mot_de_passe_confirmation"><?=_("Confirmer votre mot de passe")?></label>
-                    <input type="password" id="mot_de_passe_confirmation" name="mot_de_passe_confirmation">
+                    <input type="password" id="mot_de_passe_confirmation" class="ajax-inscription" name="mot_de_passe_confirmation">
+                </div>
+                <div id="erreur-inscription">
                 </div>
                 <div id="action-formulaire">
-                    <input type="submit" value=<?=_("S'inscrire")?> name="action-inscription">
+                    <input type="submit" value=<?=_("S'inscrire")?> id="action-inscription" name="action-inscription">
                 </div>
             </form>
             

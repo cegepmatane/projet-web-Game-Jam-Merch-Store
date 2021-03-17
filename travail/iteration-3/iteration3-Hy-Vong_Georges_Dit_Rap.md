@@ -3,7 +3,7 @@
 ## Issue: Ajax Page d'inscription et connexion #26
 ### https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/26
 
-Travail: 9 heures
+Travail: 11 heures
 
 
-### Total des heures : 9 heures
+### Total des heures : 11 heures
