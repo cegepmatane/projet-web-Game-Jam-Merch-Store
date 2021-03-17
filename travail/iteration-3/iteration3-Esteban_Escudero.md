@@ -3,7 +3,7 @@
 ## Issue: Ajax Barre de recherche #28
 ### https://github.com/cegepmatane/projet-web-Game-Jam-Merch-Store/issues/28
 
-Travail: 12 heures
+Travail: 12 heures <br>
 Lecture de documentation : 3 heures
 
 Mise à jour d'ancien code : 5 heures (#21)
