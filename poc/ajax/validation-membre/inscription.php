@@ -117,13 +117,15 @@ L'equipe Promote My Jam";
                     <input type="email" id="courriel" class="ajax-inscription" name="courriel">
 
                     <label for="mot_de_passe">Mot de passe</label>
-                    <input type="password" id="mot_de_passe" name="mot_de_passe">
+                    <input type="password" id="mot_de_passe" class="ajax-inscription" name="mot_de_passe">
 
                     <label for="mot_de_passe_confirmation">Confirmer votre mot de passe</label>
                     <input type="password" id="mot_de_passe_confirmation" class="ajax-inscription" name="mot_de_passe_confirmation">
                 </div>
+                <div id="erreur-inscription">
+                </div>
                 <div id="action-formulaire">
-                    <input type="submit" value="S'inscrire" name="action-inscription">
+                    <input type="submit" value="S'inscrire" id="action-inscription" name="action-inscription">
                 </div>
             </form>
             

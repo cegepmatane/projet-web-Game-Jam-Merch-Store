@@ -468,6 +468,15 @@ div div{
         margin: 1%;
     }
 
+#erreur-inscription{
+    width: 80%;
+    margin: 0 auto;
+    border: solid red 3px;
+    background-color: #ff8a82;
+    text-align: center;
+    display: none;
+}    
+
 @media screen and (max-width: 1000px){
     #item{
         flex-direction: column;
