@@ -12,12 +12,12 @@ function makeRequest(url) {
   }
   console.log("1");
   httpRequest.onreadystatechange = listeItem;
-  httpRequest.open('GET', url, true);
+  httpRequest.open('GET', url + "?q=" + str, true);
   httpRequest.filepath = url;
   httpRequest.send();
 }
 
-function listeItem(){
+function listeItem(){/*
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
@@ -29,7 +29,10 @@ function listeItem(){
     document.getElementByTagName('nom').values('nom');
     console.log("2");
   }
-  }
+}*/
+if(httpRequest.readyState == 4 && httpRequest.status == 200){
+  document.getElementById("barre-de-recherche").innerHTML = this.responseText;
+}
 }
 
 function afficherItemRechercher(){

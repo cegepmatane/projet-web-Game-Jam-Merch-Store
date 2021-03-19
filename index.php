@@ -66,6 +66,7 @@ $randomitem = PromotemyjamDAO::randomItem();
                 <p>Un nom magnifique</p>
                 <span>Pour un prix ahurissant</span>
             </div>
+
         </div>
     </body>
 </html>
