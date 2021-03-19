@@ -17,7 +17,7 @@ if(isset($_POST['action-authentification'])){
         $user = MembreDAO::validerConnexion($membre);
         if(!empty($user['id'])){
             if(password_verify($membre['mot_de_passe'], $user['mot_de_passe'])){
-                if($membre['confirme'] == 1)
+                if($user['confirme'] == 1)
                 {
                     $_SESSION['membre']['id'] = $user['id'];
                     $_SESSION['membre']['prenom'] = $user['prenom'];
