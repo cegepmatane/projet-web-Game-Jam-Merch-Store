@@ -34,7 +34,7 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
 	if (isset($_POST['bouton-mdp']))
 	{
 		$id=$_SESSION['membre']['id'];
-		$nouveauMotDePasse=$_REQUEST['mdp'];
+		$nouveauMotDePasse=password_hash($_REQUEST['mdp'], PASSWORD_DEFAULT);
 		$MotDePasse = MembreDAO::modifierProfilMotDePasse($id, $nouveauMotDePasse);
 
 		$_SESSION['membre']['mdp'] =  $nouveauMotDePasse;
@@ -78,36 +78,28 @@ $_SESSION['membre']['mot_de_passe'] = $user['mot_de_passe'];
         <div id="tete-profil">
             <img src="img/test.png" width="200" height="200">
             <div id="informations-compte">
-			<form action="" method="post">
+				<form action="" method="post">
+					<label for="nom-utilisateur"> 
+					<?=_("Nom d'utilisateur")?><input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
+					</label>
+					<input type="submit" name="bouton-nom-utilisateur" value=<?=_("Changer")?>>
+				</form>
 
-
-									<label for="nom-utilisateur"> 
-									<?=_("Nom d'utilisateur")?><input type="text" id="nom-utilisateur" name="nom-utilisateur" value="<?php if(isset($_SESSION['membre']['nom_utilisateur'])) { echo $_SESSION['membre']['nom_utilisateur']; } ?>" required>
-									</label>
-
-									<input type="submit" name="bouton-nom-utilisateur" value=<?=_("Changer")?>>
-
-												</form>
-
-									<form action="" method="post">
-									<label for="courriel">
-									<?=_("Courriel")?><input type="email" id="courriel" name="courriel" value="<?php if(isset($_SESSION['membre']['courriel'])) { echo $_SESSION['membre']['courriel']; } ?>">
-									</label>
-									<input type="submit" name="bouton-courriel" value=<?=_("Changer")?>>
-
-												</form>
-									<form action="" method="post">
-									<label for="mdp">
-									<?=_("Mot de passe")?><input type="password" id="mdp" name="mdp">
-									</label>
-
-									<input type="submit" name="bouton-mdp" value=<?=_("Changer")?>>
-												</form>
-							</div>
-					</div>
-
-
-			</form>
+				<form action="" method="post">
+					<label for="courriel">
+						<?=_("Courriel")?><input type="email" id="courriel" name="courriel" value="<?php if(isset($_SESSION['membre']['courriel'])) { echo $_SESSION['membre']['courriel']; } ?>">
+					</label>
+					<input type="submit" name="bouton-courriel" value=<?=_("Changer")?>>
+				</form>
+				<form action="" method="post">
+					<label for="mdp">
+					<?=_("Mot de passe")?><input type="password" id="mdp" name="mdp">
+					</label>
+	
+					<input type="submit" name="bouton-mdp" value=<?=_("Changer")?>>
+				</form>
+			</div>
+		</div>
         <form method="post" class="formulaire-profil" action="profil.php">
             <fieldset>
                 <legend><?=_("Informations personnelles")?></legend>
