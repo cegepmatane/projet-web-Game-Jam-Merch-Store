@@ -4,7 +4,7 @@ document.getElementById("barre-de-recherche").addEventListener("change", makeReq
 var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
 console.log(url);
 
-var str = document.getElementById("barre-de-recherche").value;
+var str = document.getElementById("barre-de-recherche").text;
 
 function makeRequest(url) {
   httpRequest = new XMLHttpRequest();
@@ -15,8 +15,10 @@ function makeRequest(url) {
   }
   console.log("1");
   httpRequest.onreadystatechange = listeItem;
+  var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
   httpRequest.open('GET', url + "?q=" + str, true);
   console.log(str);
+  console.log(document.getElementById("barre-de-recherche").value);
   console.log(url+"?q="+str);
   //httpRequest.filepath = url;
   httpRequest.send();
