@@ -17,23 +17,27 @@ function makeRequest(url) {
   httpRequest.send();
 }
 
-function listeItem(){/*
+function listeItem(){
+
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
     } else {
       alert('Il y a eu un problème avec la requête.');
     }
+  }
+}
+/*
     console.log("1");
     for (var i = 0; i < document.getElementByTagName('nom').length; i++) {
     document.getElementByTagName('nom').values('nom');
     console.log("2");
   }
-}*/
+}
 if(httpRequest.readyState == 4 && httpRequest.status == 200){
   document.getElementById("barre-de-recherche").innerHTML = this.responseText;
 }
-}
+}*/
 
 function afficherItemRechercher(){
 
