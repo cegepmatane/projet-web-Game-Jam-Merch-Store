@@ -60,7 +60,6 @@ $listeItem = PromotemyjamDAO::listerItems();
                 </div>
             <?php
               }
-                echo $_GET['q'];
               else {
                 if(strpos($item['nom'], $_GET['q']) !== false){
               ?>
