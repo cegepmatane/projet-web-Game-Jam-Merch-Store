@@ -36,5 +36,5 @@ function listeItem(){
 }
 
 function afficherItemRechercher(){
-
+$item = str;
 }
