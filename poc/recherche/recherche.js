@@ -1,7 +1,7 @@
 var httpRequest;
 
 document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
-string url="/poc/recherche/listeItemAjax.php";
+var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
 console.log(url);
 
 var str = document.getElementById("barre-de-recherche").value;
