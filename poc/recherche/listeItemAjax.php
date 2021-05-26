@@ -10,8 +10,8 @@ echo '<?xml version="1.0" encoding="ISO-8859-1"?>';
 <items>
   <?php
   foreach($listeItem as $item)
-  {
-    if(strpos($item['nom'], $_GET['q']) !== false){
+  {/*
+    if(strpos($item['nom'], $_GET['q']) !== false){*/
   ?>
       <item>
           <id><?php echo $item['id'];?></id>
@@ -19,7 +19,7 @@ echo '<?xml version="1.0" encoding="ISO-8859-1"?>';
           <prix><?php echo $item['prix']; ?></prix>
       </item>
   <?php
-    }
+    //}
   }
   ?>
 </items>

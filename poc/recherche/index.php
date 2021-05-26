@@ -59,6 +59,16 @@ $listeItem = PromotemyjamDAO::listerItems();
                 </div>
             <?php
               }
+              else {
+            ?>
+                <div>
+                    <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+                    <p><?php echo $item['nom']; ?></p>
+                    <span><?php echo $item['prix']; ?>$</span>
+                </div>
+            <?php
+
+              }
             }
             ?>
         </div>
