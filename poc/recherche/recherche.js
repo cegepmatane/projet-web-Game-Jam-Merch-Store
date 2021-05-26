@@ -1,7 +1,8 @@
 var httpRequest;
 
 document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
-var url="/poc/recherche/listeItemAjax.php";
+string url="/poc/recherche/listeItemAjax.php";
+console.log(url);
 
 var str = document.getElementById("barre-de-recherche").value;
 
@@ -15,7 +16,7 @@ function makeRequest(url) {
   console.log("1");
   httpRequest.onreadystatechange = listeItem;
   httpRequest.open('GET', url + "?q=" + str, true);
-  httpRequest.filepath = url;
+  //httpRequest.filepath = url;
   httpRequest.send();
 }
 
