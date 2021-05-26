@@ -1,7 +1,7 @@
 var httpRequest;
 
 document.getElementById("barre-de-recherche").addEventListener("change", makeRequest);
-var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
+var url="/poc/recherche/listeItemAjax.php";
 
 var str = document.getElementById("barre-de-recherche").value;
 
@@ -28,7 +28,6 @@ function listeItem(){
       alert('Il y a eu un problème avec la requête.');
     }
   }
-  
 }
 /*
     console.log("1");
