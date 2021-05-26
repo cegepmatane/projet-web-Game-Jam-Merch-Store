@@ -51,9 +51,7 @@ $listeItem = PromotemyjamDAO::listerItems();
             foreach($listeItem as $item)
             {
               echo $_GET['q'];
-              if ($_GET['q'] == false) {$_GET['q'] == "/";}
-                echo $_GET['q'];
-              if(strpos($item['nom'], $_GET['q']) !== false){
+              if (is_null($_GET['q'])) {
             ?>
                 <div>
                     <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
@@ -62,6 +60,18 @@ $listeItem = PromotemyjamDAO::listerItems();
                 </div>
             <?php
               }
+                echo $_GET['q'];
+              else {
+                if(strpos($item['nom'], $_GET['q']) !== false){
+              ?>
+                  <div>
+                      <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+                      <p><?php echo $item['nom']; ?></p>
+                      <span><?php echo $item['prix']; ?>$</span>
+                  </div>
+              <?php
+                }
+                }
             }
             ?>
         </div>
