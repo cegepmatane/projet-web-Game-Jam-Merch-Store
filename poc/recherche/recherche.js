@@ -28,6 +28,7 @@ function listeItem(){
       alert('Il y a eu un problème avec la requête.');
     }
   }
+  
 }
 /*
     console.log("1");
