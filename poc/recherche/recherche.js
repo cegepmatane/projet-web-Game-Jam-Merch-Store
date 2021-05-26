@@ -20,6 +20,7 @@ function makeRequest(url) {
   console.log(str);
   console.log(url+"?q="+str);
   httpRequest.send();
+  afficherItemRechercher();
 }
 
 function listeItem(){
@@ -31,4 +32,32 @@ function listeItem(){
       alert('Il y a eu un problème avec la requête.');
     }
   }
+}
+
+function afficherItemRechercher(){
+
+  foreach($listeItem as $item)
+  {
+    if (is_null($_GET['q'])) {
+
+      <div>
+          <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+          <p><?php echo $item['nom']; ?></p>
+          <span><?php echo $item['prix']; ?>$</span>
+      </div>
+
+    }
+    else if (!is_null($_GET['q'])){
+      if(strpos($item['nom'], $_GET['q']) !== false){
+
+        <div>
+            <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+            <p><?php echo $item['nom']; ?></p>
+            <span><?php echo $item['prix']; ?>$</span>
+        </div>
+    
+      }
+      }
+  }
+  ?>
 }
