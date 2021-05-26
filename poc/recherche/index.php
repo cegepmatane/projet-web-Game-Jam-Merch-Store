@@ -50,7 +50,6 @@ $listeItem = PromotemyjamDAO::listerItems();
             <?php
             foreach($listeItem as $item)
             {
-              echo $_GET['q'];
               if (is_null($_GET['q'])) {
             ?>
                 <div>
@@ -60,7 +59,7 @@ $listeItem = PromotemyjamDAO::listerItems();
                 </div>
             <?php
               }
-              else {
+              else if (!is_null($_GET['q'])){
                 if(strpos($item['nom'], $_GET['q']) !== false){
               ?>
                   <div>
