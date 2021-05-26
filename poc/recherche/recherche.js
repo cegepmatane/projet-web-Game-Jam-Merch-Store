@@ -19,7 +19,6 @@ function makeRequest(url) {
   httpRequest.open('GET', url + "?q=" + str, true);
   console.log(str);
   console.log(url+"?q="+str);
-  //httpRequest.filepath = url;
   httpRequest.send();
 }
 
@@ -28,12 +27,8 @@ function listeItem(){
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
-      afficherItemRechercher();
     } else {
       alert('Il y a eu un problème avec la requête.');
     }
   }
-}
-
-function afficherItemRechercher(){
 }
