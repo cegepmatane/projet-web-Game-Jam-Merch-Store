@@ -40,7 +40,6 @@ function listeItem(){
         console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
           console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
       document.getElementById("afficher").innerHTML =
-      "<div>" +
       '   <a href="item.php?id="' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
       '"><img src=./img/item1.png></a><p>' +
@@ -48,8 +47,7 @@ function listeItem(){
       '</p>\n' +
       '   <span>' +
       x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
-      '$</span>' +
-      '</div>';
+      '$</span>';
     }
   } else {
         alert('Il y a eu un problème avec la requête.');
