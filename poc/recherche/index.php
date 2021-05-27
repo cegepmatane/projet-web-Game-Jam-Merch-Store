@@ -12,7 +12,6 @@ $listeItem = PromotemyjamDAO::listerItems();
     <head>
     <title>Page Title</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="recherche.js" defer></script>
     </head>
     <body>
 	<div class="barre-navigation">
@@ -71,5 +70,6 @@ $listeItem = PromotemyjamDAO::listerItems();
             }
             ?>
         </div>
+        <script src="recherche.js" defer></script>
     </body>
 </html>
