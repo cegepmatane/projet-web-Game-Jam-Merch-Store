@@ -43,7 +43,6 @@ $listeItem = PromotemyjamDAO::listerItems();
         </div>
         <hr>
 
-        <script src="recherche.js" defer></script>
         <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher un produit"/>
 
         <div class="content">
@@ -73,5 +72,6 @@ $listeItem = PromotemyjamDAO::listerItems();
         </div>
         <div class="afficher" id="afficher">
         </div>
+                <script src="recherche.js" defer></script>
     </body>
 </html>
