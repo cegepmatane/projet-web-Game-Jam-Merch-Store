@@ -36,12 +36,7 @@ function listeItem(){
     var x = doc.getElementsByTagName("item");
     for (i = 0;i < x.length; i++)
     {
-      document.getElementById('content').innerHTML =
-      '<div>' +
-      '   <a href="item.php?id="' +x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue+'"><img src=./img/item1.png></a>' +
-      '   <p>'+x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue+'</p>\n' +
-      '   <span>'+ x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue+'$</span>' +
-      '</div>';
+      document.getElementById('content').innerHTML = '<div>' + '   <a href="item.php?id="' +x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue+'"><img src=./img/item1.png></a>' + '   <p>'+x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue+'</p>\n' + '   <span>'+ x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue+'$</span>' + '</div>';
     }
   } else {
         alert('Il y a eu un problème avec la requête.');
