@@ -20,7 +20,6 @@ function makeRequest(url) {
   console.log(str);
   console.log(url+"?q="+str);
   httpRequest.send();
-  afficherItemRechercher();
 }
 
 function listeItem(){
@@ -28,16 +27,31 @@ function listeItem(){
   if (httpRequest.readyState === XMLHttpRequest.DONE) {
     if (httpRequest.status === 200) {
       alert(httpRequest.responseText);
-    } else {
-      alert('Il y a eu un problème avec la requête.');
+
+      var strXML = httpRequest.responseText;
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(strXML, 'text/xml');
     }
-  }
+
+    var x = doc.getElementsByTagName("item");
+    for (i = 0;i < x.length; i++)
+    {
+      document.getElementById('content').innerHTML =
+      '<div>' +
+      '   <a href="item.php?id="' +x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue+'"><img src='./img/item1.png'></a>' +
+      '   <p>'+x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue+'</p>\n' +
+      '   <span>'+ x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue+'$</span>' +
+      '</div>';
+    }
+  } else {
+        alert('Il y a eu un problème avec la requête.');
+    }
 }
 
-function afficherItemRechercher(){
-  if(isset($_GET ['q'])){
-    var barrederecherche = document.getElementById("barre-de-recherche");
-
-	barrederecherche.style.display = "block";
-  }
-}
+/*
+<div>
+    <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+    <p><?php echo $item['nom']; ?></p>
+    <span><?php echo $item['prix']; ?>$</span>
+</div>
+*/
