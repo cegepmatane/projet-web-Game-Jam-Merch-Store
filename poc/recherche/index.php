@@ -45,7 +45,7 @@ $listeItem = PromotemyjamDAO::listerItems();
 
         <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher un produit"/>
 
-        <div class="content">
+        <div class="content" id="content">
             <?php
             foreach($listeItem as $item)
             {/*
