@@ -36,9 +36,9 @@ function listeItem(){
     var x = doc.getElementsByTagName("item");
     for (var i = 0;i < x.length; i++)
     {
-      console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
-        console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
-          console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
+      //console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
+      //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
+      //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
       document.getElementById("content").innerHTML =
       '   <a href="item.php?id="' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
@@ -50,7 +50,7 @@ function listeItem(){
       '$</span>';
     }
   } else {
-        alert('Il y a eu un problème avec la requête.');
+        //alert('Il y a eu un problème avec la requête.');
     }
 }
 
