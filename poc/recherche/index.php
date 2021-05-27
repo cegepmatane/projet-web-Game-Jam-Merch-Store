@@ -71,7 +71,7 @@ $listeItem = PromotemyjamDAO::listerItems();
             }
             ?>
         </div>
-        <div class="afficher">
+        <div class="afficher" id="afficher">
         </div>
     </body>
 </html>
