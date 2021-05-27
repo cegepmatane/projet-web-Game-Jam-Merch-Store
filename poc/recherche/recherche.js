@@ -32,14 +32,14 @@ function listeItem(){
       var parser = new DOMParser();
       var doc = parser.parseFromString(strXML, 'text/xml');
     }
-
+    var i;
     var x = doc.getElementsByTagName("item");
-    for (int i = 0;i < x.length; i++)
+    for (var i = 0;i < x.length; i++)
     {
       console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
         console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
           console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
-      document.getElementById("content").innerHTML =
+      document.getElementById("afficher").innerHTML =
       "<div>" +
       '   <a href="item.php?id="' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
