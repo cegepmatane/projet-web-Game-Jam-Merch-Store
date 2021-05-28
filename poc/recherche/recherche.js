@@ -90,7 +90,7 @@ function listeItem(){
         recherche = recherchenull;
       };
 
-      document.getElementById("content").innerHTML =
+      document.getElementById("content").innerHTML +=
       '<?php\nforeach($listeItem as $item){\n?>' +
       recherche +
       '\n<?php\n}\n?>';
