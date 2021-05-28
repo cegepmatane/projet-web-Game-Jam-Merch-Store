@@ -60,7 +60,7 @@ function listeItem(){
 
       var recherche;
 
-      if(document.getElementById("barre-de-recherche").value !== null) {
+      if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue >= 0) {
         recherche = recherchenotnull;
       }else{
         recherche = recherchenull;
