@@ -33,13 +33,12 @@ function listeItem(){
     }
     var i;
     var x = doc.getElementsByTagName("item");
+          document.getElementById("content").innerHTML = "";
     for (var i = 0;i < x.length; i++)
     {
       //console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
-
-      document.getElementById("content").innerHTML = "";
 
       var recherchenull =
       '<div>'+
@@ -99,7 +98,6 @@ function listeItem(){
 
       console.log(document.getElementById("content").innerHTML);
     }
-      console.log(document.getElementById("content").innerHTML);
   } else {
         console.log('Il y a eu un problème avec la requête.');
     }
