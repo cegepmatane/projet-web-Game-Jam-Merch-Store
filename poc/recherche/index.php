@@ -49,7 +49,7 @@ $listeItem = PromotemyjamDAO::listerItems();
           <div>
               <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
               <p><?php echo $item['nom']; ?></p>
-              <span><?php echo $item['prix']; ?>CAD$</span>
+              <span><?php echo $item['prix']; ?>€</span>
           </div>
           <script src="recherche.js" defer></script>
         </div>
