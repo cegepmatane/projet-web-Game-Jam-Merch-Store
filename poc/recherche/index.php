@@ -47,29 +47,7 @@ $listeItem = PromotemyjamDAO::listerItems();
 
                 <script src="recherche.js" defer></script>
         <div class="content" id="content">
-            <?php
-            foreach($listeItem as $item)
-            {/*
-              if (is_null($_GET['q'])) {
-            ?>
-                <div>
-                    <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
-                    <p><?php echo $item['nom']; ?></p>
-                    <span><?php echo $item['prix']; ?>$</span>
-                </div>
-            <?php
-              }
-              else if (!is_null($_GET['q'])){*/
-              ?>
-                  <div>
-                      <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
-                      <p><?php echo $item['nom']; ?></p>
-                      <span><?php echo $item['prix']; ?>$</span>
-                  </div>
-              <?php
-              /*}*/
-            }
-            ?>
+
         </div>
                 <script src="recherche.js" defer></script>
     </body>
