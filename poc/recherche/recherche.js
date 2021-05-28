@@ -38,7 +38,7 @@ function listeItem(){
       //console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
-      document.getElementsByClassName("content").innerHTML =
+      document.getElementById("content").innerHTML =
       '<div>\n' +
       '   <a href="https://www.promotemyjam.store/item.php?id=' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
