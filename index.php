@@ -61,6 +61,11 @@ $randomitem = PromotemyjamDAO::randomItem();
               <?php
             }
             ?>
+            <div>
+               <a href="item.php?id=<?php echo $randomitem['id']; ?>"><img src='.img/rand.png'></a>
+               <p>Un nom magnifique</p>
+               <span>Pour un prix ahurissant</span>
+            </div>
             <script src="recherche.js" defer></script>
 
         </div>
