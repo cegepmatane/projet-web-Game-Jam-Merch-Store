@@ -69,7 +69,7 @@ function listeItem(){
       document.getElementById("content").innerHTML =
       '<?php\nforeach($listeItem as $item){\n?>' +
       recherche +
-      '<?php\n}\n?>';
+      '\n<?php\n}\n?>';
 
       console.log(document.getElementById("content").innerHTML);
     }
