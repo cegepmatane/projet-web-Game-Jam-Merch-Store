@@ -39,6 +39,8 @@ function listeItem(){
       //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
 
+      document.getElementById("content").innerHTML = "";
+
       var recherchenull =
       '<div>'+
       '   <a href="item.php?id=<?php echo $item'+"['id']; ?>"+'"'+"><img src='./img/item1.png'></a>"+
@@ -57,7 +59,7 @@ function listeItem(){
       x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
       '$</span>\n' +
       '</div>';
-
+/*
       var rechercheituk =
       '<div>\n' +
       '   <a href="item.php?id=' +
@@ -78,14 +80,14 @@ function listeItem(){
       '   <span>' +
       55 +
       '$</span>\n' +
-      '</div>';
+      '</div>';*/
 
       var recherche;
 
       if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue >= 0) {
-        recherche = recherchenotnull;
+        recherche = recherchenotnull;/*
       }else if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue == 6){
-        recherche = rechercheituk
+        recherche = rechercheituk*/
       }else{
         recherche = recherchenull;
       };
