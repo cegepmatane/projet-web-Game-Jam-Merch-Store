@@ -39,15 +39,15 @@ function listeItem(){
       //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
       document.getElementsByClassName("content").innerHTML =
-      '<div>' +
+      '<div>\n' +
       '   <a href="item.php?id=' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
-      '"><img src=./img/item1.png></a><p>' +
+      '"><img src=./img/item1.png></a>\n<p>' +
       x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue +
       '</p>\n' +
       '   <span>' +
       x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
-      '$</span>' +
+      '$</span>\n' +
       '</div>';
       console.log(document.getElementsByClassName("content").innerHTML);
     }
