@@ -60,10 +60,10 @@ function listeItem(){
 
       var recherche;
 
-      if(document.getElementById("barre-de-recherche").value === null || document.getElementById("barre-de-recherche").value === '' || document.getElementById("barre-de-recherche").value === ' ') {
-        recherche = recherchenull;
-      }else{
+      if(document.getElementById("barre-de-recherche").value !=== null) {
         recherche = recherchenotnull;
+      }else{
+        recherche = recherchenull;
       };
 
       document.getElementById("content").innerHTML = recherche;
