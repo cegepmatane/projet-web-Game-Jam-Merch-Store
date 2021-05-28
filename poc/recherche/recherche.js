@@ -58,10 +58,34 @@ function listeItem(){
       '$</span>\n' +
       '</div>';
 
+      var rechercheituk =
+      '<div>\n' +
+      '   <a href="item.php?id=' +
+      x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
+      '"><img src=./img/item1.png></a>\n   <p>' +
+      x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue +
+      '</p>\n' +
+      '   <span>' +
+      x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
+      '$</span>\n' +
+      '</div>\n' +
+      '<div>\n' +
+      '   <a href="item.php?id=' +
+      5 +
+      '"><img src=./img/item1.png></a>\n   <p>' +
+      "Tableau Ituk" +
+      '</p>\n' +
+      '   <span>' +
+      55 +
+      '$</span>\n' +
+      '</div>';
+
       var recherche;
 
       if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue >= 0) {
         recherche = recherchenotnull;
+      }else if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue == 6){
+        recherche = rechercheituk
       }else{
         recherche = recherchenull;
       };
@@ -73,6 +97,7 @@ function listeItem(){
 
       console.log(document.getElementById("content").innerHTML);
     }
+      console.log(document.getElementById("content").innerHTML);
   } else {
         console.log('Il y a eu un problème avec la requête.');
     }
