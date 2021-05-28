@@ -46,8 +46,9 @@ $randomitem = PromotemyjamDAO::randomItem();
         </div>
         <hr>
 
+        <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher un produit"/>
 
-        <div class="content">
+        <div id="content">
             <script src="recherche.js" defer></script>
 
         </div>
