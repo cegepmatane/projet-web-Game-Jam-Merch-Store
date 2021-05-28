@@ -38,9 +38,17 @@ function listeItem(){
       //console.log(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue);
       //console.log(x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue);
-      document.getElementById("content").innerHTML =
+
+      var recherchenull =
+      '<div>'+
+      '   <a href="item.php?id=<?php echo $item'+"['id']; ?>"+'"'+"><img src='./img/item1.png'></a>"+
+      "   <p><?php echo $item['nom']; ?></p>"+
+      "   <span><?php echo $item['prix']; ?>$</span>"+
+      '</div>';
+
+      var recherchenotnull =
       '<div>\n' +
-      '   <a href="https://www.promotemyjam.store/item.php?id=' +
+      '   <a href="item.php?id=' +
       x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue +
       '"><img src=./img/item1.png></a>\n   <p>' +
       x[i].getElementsByTagName("nom")[0].childNodes[0].nodeValue +
@@ -49,7 +57,18 @@ function listeItem(){
       x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
       '$</span>\n' +
       '</div>';
-      console.log(document.getElementsByClassName("content").innerHTML);
+
+      var recherche;
+
+      if(str == null) {
+        recherche = recherchenull;
+      }else{
+        recherche = recherchenotnull;
+      };
+
+      document.getElementById("content").innerHTML = recherche;
+
+      console.log(document.getElementById("content").innerHTML);
     }
   } else {
         console.log('Il y a eu un problème avec la requête.');
