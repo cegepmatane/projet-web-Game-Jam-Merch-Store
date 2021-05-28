@@ -49,6 +49,18 @@ $randomitem = PromotemyjamDAO::randomItem();
         <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher un produit"/>
 
         <div id="content">
+          <?php
+            foreach($listeItem as $item)
+            {
+              ?>
+                  <div>
+                      <a href="item.php?id=<?php echo $item['id']; ?>"><img src='./img/item1.png'></a>
+                      <p><?php echo $item['nom']; ?></p>
+                      <span><?php echo $item['prix']; ?>$</span>
+                  </div>
+              <?php
+            }
+            ?>
             <script src="recherche.js" defer></script>
 
         </div>
