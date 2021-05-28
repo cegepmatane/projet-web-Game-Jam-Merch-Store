@@ -10,7 +10,6 @@ function makeRequest(url) {
     alert('Abandon :( Impossible de créer une instance de XMLHTTP');
     return false;
   }
-  console.log("1");
   httpRequest.onreadystatechange = listeItem;
 
   var url="https://www.promotemyjam.store/poc/recherche/listeItemAjax.php";
@@ -50,6 +49,7 @@ function listeItem(){
       x[i].getElementsByTagName("prix")[0].childNodes[0].nodeValue +
       '$</span>' +
       '</div>';
+      console.log(document.getElementsByClassName("content").innerHTML);
     }
   } else {
         //alert('Il y a eu un problème avec la requête.');
